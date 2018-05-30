@@ -1,0 +1,934 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>lundlinuxcon.org</title>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+		<meta name="description" content="Lund LinuxCon homepage">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				font-size: 16px;
+			}
+			@media(min-width:60em) {
+				body {
+					font-size: 12px;
+				}
+			}
+			html {
+				background-color: black;
+				color: #CCC;
+				font-family: "Noto Serif", "Liberation Serif", "Droid Serif", serif;
+			}
+			a {
+				color: #888;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+
+			div.logo {
+				width: 800px;
+				height: 143px;
+				margin-top: 5em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.center, p.crew, img.logo, div.main {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.divide {
+				text-align: center;
+				border-bottom: 1pt solid #400000;
+			}
+			div.main {
+				/* Same width as the image */
+				width: 800px;
+			}
+			a.links {
+				border-radius: 50pt 50pt 0pt 0pt;
+				padding-left: 1em;
+				padding-right: 1em;
+				margin-left: 0pt;
+				margin-right: 0pt;
+				background-color: #500000;
+				color: #EEEEEE;
+				text-shadow: black 0.1em 0.1em 0.2em;
+				padding-bottom: 0;
+			}
+			a.links:hover {
+				background-color: #EEEEEE;
+				color: #000000;
+			}
+			div.storage {
+				visibility: hidden;
+				display: none;
+			}
+			#content {
+				padding-top: 0;
+				border-top: 1.2pt solid #500000;
+			}
+			table {
+				width: 90%;
+				text-align: left;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			h2.crew, h3.crew {
+				margin-bottom: 0;
+				font-variant: small-caps;
+			}
+			p.crew {
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="application/javascript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-86125549-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script nonce="090F4F1B3EC91062B38E02076B815545" type="application/javascript">
+			var default_page = 'current';
+
+			function get_var(variable) {
+				var query = window.location.search.substring(1)
+				var vars = query.split("&");
+				for (var i = 0; i < vars.length; i++) {
+					var pair = vars[i].split("=");
+					if (pair[0] == variable) {
+						return unescape(pair[1]);
+					}
+				}
+			}
+
+			function lazy_load(data) {
+				images = data.getElementsByTagName('img');
+				for (let index = 0; index < images.length; ++index) {
+					if (images[index].getAttribute('src') == "")
+						images[index].src = images[index].getAttribute("data-src");
+				}
+			}
+
+			function change_subject(subject) {
+				if (subject == undefined && 
+						(subject = get_var('page')) == undefined) {
+					subject = default_page;
+				}
+				history.replaceState(null, null, location.pathname + '?page=' + subject);
+				item = document.getElementById("content");
+				data = document.getElementById(subject);
+				lazy_load(data);
+				item.replaceChild(data.cloneNode(true), item.firstChild);
+			}
+			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
+		</script>
+		<script nonce="090F4F1B3EC91062B38E02076B815545" type="application/javascript">
+			/* Companies/orgnaisations */
+			var organisations = {
+				axis: {			title: "Axis",		url: "https://www.axis.com/"		},
+				//canonical: {		title: "Canonical",	url: "https://www.canonical.com/"	},
+				cnexlabs: {		title: "CNEX Labs",	url: "https://www.cnexlabs.com/"	},
+				ericsson: {		title: "Ericsson",	url: "https://www.ericsson.com/"	},
+				intel_otc: {		title: "intel",		url: "https://01.org/"			},
+				linaro: {		title: "Linaro",	url: "https://www.linaro.org/"		},
+				lth: {			title: "LTH",		url: "http://www.lth.se/"		},
+				prevas: {		title: "Prevas",	url: "http://www.prevas.com/"		}
+			}
+			/* presenters/crew with website/email */
+			var presenters = {
+				'Amelia Andersdotter': {	url: "https://dataskydd.net/"				},
+				'Gunnar Andersson': {		url: "https://www.genivi.org/"				},
+				'Javier González': {		url: "https://javigon.com/"				},
+				'Joakim Bech': {		url: "http://joakimbech.com/"				},
+			//	'Johan Hovold': {		url: "" 		},
+				'Hans Holmberg': {		url: "https://www.owltronix.com/"			},
+				'Linus Walleij': {		url: "https://dflund.se/~triad/"			},
+				'Martina Maggio': {		url: "http://www.martinamaggio.com/"			},
+				'Krister Walfridsson': {	url: "https://kristerw.blogspot.com/"			}
+			};
+			function populate_buttons() {
+				document.getElementById("nav_current").addEventListener("click", function(){change_subject('current')});
+				document.getElementById("nav_about").addEventListener("click", function(){change_subject('about')});
+				document.getElementById("nav_crew").addEventListener("click", function(){change_subject('crew')});
+				document.getElementById("nav_past").addEventListener("click", function(){change_subject('past')});
+				document.getElementById("nav_tshirts").addEventListener("click", function(){change_subject('t-shirt')});
+				document.getElementById("nav_codeofcon").addEventListener("click", function(){change_subject('code')});
+			}
+			/* Since firefox, safari and edge seems to be missing cool new html5 semantics */
+			function __populate(source, elements, element_type, replace) {
+				var tag = document.createElement(element_type);
+				for (var index = 0; index < elements.length; index++) {
+					name = elements[index].innerText;
+					var data = source[name];
+					if (data == null)
+						continue;
+					if (data['title'])
+						name = data['title'];
+					tag.innerText = name;
+					tag.href = data['url'];
+					elements[index].innerText = '';
+					elements[index].appendChild(tag.cloneNode(true));
+				}
+			}
+			function populate_organisations() {
+				__populate(organisations, document.querySelectorAll('*[class=org]'), 'a', false);
+			}
+			function populate_presenters() {
+				__populate(presenters, document.querySelectorAll('*[class=pres]'), 'a', true);
+			}
+			var __populated = false;
+			function populate() {
+				if (__populated)
+					return;
+				__populated = true;
+				populate_buttons();
+				populate_organisations();
+				populate_presenters();
+			}
+			document.getElementsByTagName('body')[0].onpageshow = function() {change_subject(); populate()};
+		</script>
+		<div class="logo">
+			<img class="logo" src="llc-2018.svg" width="800" height="143" alt="Lund LinuxCon">
+		</div>
+		<div class="main">
+			<a id="nav_current" class="links">current</a>
+			<a id="nav_about" class="links">about</a>
+			<a id="nav_crew" class="links">crew</a>
+			<a id="nav_past" class="links">past events</a>
+			<a id="nav_tshirts" class="links">t-shirts</a>
+			<a id="nav_codeofcon" class="links">code of conduct</a>
+			<div id="content">
+			</div>
+		</div>
+		<br/>
+		<p class="center">
+			<!-- Place this code where you want the badge to render. -->
+			<a href="//plus.google.com/u/0/113384782132783208350?prsrc=3"
+   					rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#777;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">follow</span>
+				<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px;margin-top:8px;">Lund LinuxCon</span>
+				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">on</span>
+				<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" height="32" width="32"/>
+			</a>
+		</p>
+
+		<p class="center">
+			Contact us at <a href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a> or on <a href="ircs://irc.freenode.net/lundlc">#lundlc</a> at <a href="https://freenode.net/">freenode</a>
+		</p>
+		<div class="storage">
+			<div id="current">
+				<h1>LLC 2018 - 3-4 of May</h1>
+
+				<!-- <h3>Keep in mind that the Lundkarneval will be on the 18-20th of May! more info <a href="http://lundakarnevalen.se/en/">here</a></h3> -->
+
+				<p style="text-align: left;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get such an invitation! All we ask for is that you have some interest in the Linux kernel from a technical perspective.
+				<!-- If you would like to join the conference, please use <a href="https://goo.gl/QoajCC">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly.--> </p> 
+				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
+
+				<!--
+				<table>
+					<tr>
+						<td class="divide">
+							<h2>We hope you come back again!</h2>
+							<a href="images/llc-2017-people.jpg">
+								<picture>
+									<source srcset="images/llc-2017-people-small.webp" width="800" height="217">
+									<img src="" data-src="images/llc-2017-people-small.jpg" width="800" height="217" alt="People at LLC 2017">
+								</picture>
+							</a>
+							<h5>(picture of the crowd just before lunch, day two)</h5>
+						</td>
+					</tr>
+				</table> -->
+				<table>
+				<!--	<tr>
+						<th>time</th>
+						<th>presenter</th>
+						<th>presentation</th>
+					</tr>
+					<tr>
+						<td colspan=2>8:30</td>
+						<td>The doors are open. Come and grab a cup of coffee and your name tag!</td>
+					</tr>
+					<tr>
+						<td>9:00</td>
+						<td><a onclick="change_subject('crew')">the crew</a></td>
+						<td>Introduction</td>
+					</tr> -->
+					<tr>
+						<td class="divide" colspan=3>
+							<h2>Ouroboros-Unicorn edition - preliminary program</h2>
+							<!-- <h4>The official <a href="">program</a></h4> -->
+							<h3>Day one - 2018-05-03</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Time</th>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td>8:30</td>
+						<td colspan=2>The doors are open, come and grab a cup of coffee and your name tag</td>
+					</tr>
+					<tr>
+						<td>9:00</td>
+						<td>the crew</td>
+						<td>Introduction</td>
+					</tr>
+					<tr>
+						<td>9:30</td>
+						<td><span class="pres">Johan Hovold</span></td>
+						<td>The serial device bus</td>
+					</tr>
+					<tr>
+						<td>10:15</td>
+						<td colspan=2>Break</td>
+					</tr>
+					<tr>
+						<td>10:30</td>
+						<td><span class="pres">Philippe Bonnet</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxcklFSGp2MWN6ZjV4cTZJU2VZVjFOaFM3R3Zz">Near data procéssing and it's implications for Linux</a></td>
+					</tr>
+					<tr>
+						<td>11:15</td>
+						<td><span class="pres">Hans Holmberg</span></td>
+						<td>PBLK - a guided tour</td>
+					</tr>
+					<tr>
+						<td>12:00</td>
+						<td colspan=2>Lunch (not included)</td>
+					</tr>
+					<tr>
+						<td>13:00</td>
+						<td><span class="pres">Martin Hell</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxRk5oMFVZSjROR1ByMlBGLTBWTl9rdWZ6R19r">The SECONDS project</a></td>
+					</tr>
+					<tr>
+						<td>13:45</td>
+						<td><span class="pres">Robert Fekete</span> and <span class="pres">Joakim Nordell</span></td>
+						<td>Security in cars</td>
+					</tr>
+					<tr>
+						<td>14:30</td>
+						<td colspan=2>Break</td>
+					</tr>
+					<tr>
+						<td>15:00</td>
+						<td colspan=2>Discussion: Security</td>
+					</tr>
+					<tr>
+						<td>16:00</td>
+						<td colspan=2>Demos, Beverages, Snacks</td>
+					</tr>
+					<tr>
+						<td>~18:30 - ~21:00</td>
+						<td colspan=2>Social activity: Glorias</td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=3>
+							<h3>Day Two - 2018-05-04</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Time</th>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>8:30</td>
+						<td colspan=2>The doors are open, come and grab a cup of coffee</td>
+					</tr>
+					<tr>
+						<td>9:00</td>
+						<td><span class="pres">Linus Walleij</span></td>
+						<td><a href="https://drive.google.com/open?id=1c2fNr-Rih0LHsQ5pqrDG7qaUXXsLslzw">Maintaining really old ARM systems</a></td>
+					</tr>
+					<tr>
+						<td>9:45</td>
+						<td><span class="pres">Niklas Cassel</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxVTlVMld3bW5KX3hfZkV3Q3ctNldQSUl5cGM4">An introduction to PCIe<</a>/td>
+					</tr>
+					<tr>
+						<td>10:30</td>
+						<td colspan=2>Break</td>
+					</tr>
+					<tr>
+						<td>10:45</td>
+						<td><span class="pres">Jesper Dangaard Brouer</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxU1dWNGljVkVhWlVjaWxyckZWS2p3cENIbzZB">XDP - now with redirects</a></td>
+					</tr>
+					<tr>
+						<td>11:30</td>
+						<td><span class="pres">Björn Töpel</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxNXdHWGVIRmx3ZEp5LXZGTEVxMTBCVTdmeVgw">AF_XDP: An order of magnitude faster packet processing with standard Linux</a></td>
+					</tr>
+					<tr>
+						<td>12:15</td>
+						<td colspan=2>Lunch (not included)</td>
+					</tr>
+					<tr>
+						<td>13:15</td>
+						<td><span class="pres">Simon A. F. Lund</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxYUxtQWtxell0SXFQR3h2SzRJdWw3d25Sa2xR">Presentation</a> + Discussion: Testing</td>
+					</tr>
+					<tr>
+						<td>14:15</td>
+						<td><span class="pres">Octavian Purdila</td>
+						<td>Upstreaming the linux kernel teaching project</td>
+					</tr>
+					<tr>
+						<td>14:45</td>
+						<td colspan=2>Break</td>
+					</tr>
+					<tr>
+						<td>15:15</td>
+						<td colspan=2>Lightning talks: TBA</td>
+					</tr>
+					<tr>
+						<td>16:00</td>
+						<td colspan=2>Finishing up: Conclusions, networking, snacks and drinks</td>
+					</tr>
+
+
+				</table>
+			</div>
+			<div id="crew">
+				<h3 class="crew"><span class="pres">Hans Holmberg</span> - <span class="org">cnexlabs</span></h3>
+				<p class="crew">Is on a quest in the blocklayer when he's not teaching about the linux kernel</p>
+
+				<h3 class="crew"><span class="pres">Ian Kumlien</span> - <span class="org">ericsson</span></h3>
+				<p class="crew">We've seen him sending <a href="https://marc.info/?l=linux-netdev&m=148334514915554&w=2">patches</a>, but now he seems to have mounted lkml read-only. We are still waiting for more patches :)... oh, and the one responsible/to-blame&trade; for the webpage and t-shirt designs</p>
+
+				<h3 class="crew"><span class="pres">Javier González</span> - <span class="org">cnexlabs</span></h3>
+				<p class="crew">building the Open-Channel SSD ecosystem on Linux. Main developer of LightNVM's open source Flash Translation Layer (pblk). Interested in NAND and next generation non-volatile memories</p>
+
+				<h3 class="crew"><span class="pres">Jesper Nilsson</span> - <span class="org">axis</span></h3>
+				<p class="crew">Long time Unix and Linux developer, maintainer of the Axis CRIS port of Linux from 2008 to it's removal in 2018. Working with Linux kernel drivers and debugging for Axis SoC</p>
+
+				<h3 class="crew"><span class="pres">Linus Walleij</span> - <span class="org">linaro</span></h3>
+				<p class="crew">We claim that it's a really interesting story</p>
+
+				<h3 class="crew"><span class="pres">Niklas Cassel</span> - <span class="org">linaro</span></h3>
+				<p class="crew">Is working on getting things upstream!</p>
+
+				<h3 class="crew"><span class="pres">Robert Fekete</span> - <span class="org">Volvo Cars</span></h3>
+				<p class="crew">Linux promoter at Volvo Cars, previously Linux Kernel Gfx developer at Intel Open Source Technology Center, and before that driving the "Linuxification" of mobile platforms at Ericsson and ST-Ericsson from a multimedia perspective</p>
+
+				<br/>
+				<h2 class="crew">Alumni</h2>
+				<h3 class="crew"><span class="pres">David Henningsson</span></h3>
+				<p class="crew">involved in Linux audio, and formerly employed by Canonical</p> 
+
+			</div>
+			<div id="past">
+				<br/>
+				<h2>2018</h2>
+				<p>Not here yet, but check out the current page, linked above</p>
+				<br/>
+				<table>
+
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2017 - Mucha edition</h2>
+							<h4>The official <a href="https://drive.google.com/open?id=0BybszUG3ewMxd1RrM213OE9LM1oxT3Z0Vm1McE00WHVqS3A0">program</a></h4>
+							<h3>Day one - 2017-05-04</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Hans Holmberg</span>
+						</td>
+						<td>The Open Kernel Teaching Project</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">David Herrmann</span> &amp;
+							<span class="pres">Tom Gundersen</span>
+						</td>
+						<td>BUS1</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Linus Walleij</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=1ICwm3x_QU74ttfpek_hV_0oZDcZBCsvuezyBSDq5sgs">Uncle Blocklayer</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Jesper Dangaard Brouer</span>
+						</td>
+						<td>Linux Kernel: eXpress Data Path (XDP) for DDoS protection</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Christoffer Jerkeby</span>
+						</td>
+						<td>Security in DevOps</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Julia Lawall</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=0B60z2Cn5EmKLYXNiNXBJSGthX0tDa19wR3NxZnhxRDVFUVpZ">Coccinelle</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Iago Abal</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=0B60z2Cn5EmKLeWFvYzctMmNVMmlfQzVQNnEyWVBXOXFiMnVR">Finding Non-Trivial Double-Lock Bugs in Linux Device Drivers with EBA</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h3>Day two - 2017-05-05</h3>
+						</td>
+					</tr>
+					<tr>
+						<td class="pres">Christoffer Dall</td>
+						<td>The design and implementation of KVM/ARM</td>
+					</tr>
+					<tr>
+						<td class="pres">Mian Yousaf Kaukab</td>
+						<td>openSUSE hardware enablement</td>
+					</tr>
+					<tr>
+						<td class="pres">Thomas Gleixner</td>
+						<td>The anatomy of Linux Realtime</td>
+					</tr>
+					<tr>
+						<td class="pres">David Henningsson</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxN0VCYkZjNGV6Nnc">Low latency audio through core isolation</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Robert Fekete</span>, 
+							<span class="pres">Gunnar Andersson</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxbzQ2TXVGMnExVGU3LVFfbGtxMUNVZmhNWGJN">Linux and cars</a>, and GENIVI Alliance introduction by Gunnar</td>
+					</tr>
+					<tr>
+						<td class="pres">Krister Walfridsson</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxUmRYN2FNczZvRHBmbERtSHR4b3FndzlxMHpB">Getting more performance out of GCC</a></td>
+					</tr>
+					<tr>
+						<td colspan=2>
+							<h3>Lightning talks</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Patrik Åberg</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=0B60z2Cn5EmKLQm1sd0JJUTczNWM">The DMCE Project (Did My Code Execute)</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Rabin Vincent</span>
+						</td>
+						<td><a href="https://github.com/rabinv/kninja">Kninja - building kernels faster</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2016 - Beerlin edition</h2>
+							<h4>The official <a href="https://docs.google.com/document/d/15KqC-Agz6q4mxxA2EHM1WOd35rgP2pL3qDHkjjSg-lU/edit?usp=sharing">program</a></h4>
+							<h3>Day one - 2016-05-12</h3>
+						</td>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Robert Fekete</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1Za2JZv8lscH5iyimXUOKh4BLSNmDuCQstHHx_VJ_iRc/edit?usp=sharing">ChromeOS explained</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Linus Walleij</span> -
+							<span class="org">linaro</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1-EMAsTW8OmP-QDgSlt8dpNVHCTyvcebpr8fteiTBcjA/edit?usp=sharing">IIO kernel</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Daniel Baluta</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeXI5MjY0ZkM2Ync/view?usp=sharing">IIO Android HAL</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Mikael Persson</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLcE9fM0R4dUpIZWc/view?usp=sharing">Video for linux</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Patrik Jakobsson</span>
+						</td>
+						<td>Facetime HD driver for linux</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Daniel Baluta</span>
+						</td>
+						<td>Linux kernel programming undergraduate course</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Fredrik Hugosson</span> -
+							<span class="org">axis</span>
+						</td>
+						<td>ACoC</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Constatin Musca</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxTkctcWxfMEc0RFFBeG1yRjRrNVVObzdFOHVr/view?usp=sharing">Brillo</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h3>Day two - 2016-05-13</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Octavian Purdila</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1s6ih4Cs6GFU-tzPlDBPUjmTr_KJfV7GHzXN0Y_XHszw/edit?usp=sharing">Linux kernel as a library</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">David Henningsson</span>
+						</td>
+						<td>DKMS - Dynamic Kenrel Module Support</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Fabrizio Demaria</span>
+						</td>
+						<td>Security of Multipath TCP</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Andy Polyakov</span>
+						</td>
+						<td>OpenSSL</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Johan Hovold</span>
+						</td>
+						<td>Greybus</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Matias Bjørling</span>
+						</td>
+						<td>Open-channel solid state drives</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Daniel Baluta</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/14ve25ye7Ed_cppO-PRZ_z1LKLwTT6NIT1z-Cn9QriwQ/edit?usp=sharing">Outreachy</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Krister Walfridsson</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxNnZEejh1RFJyeEtnUFhpb2hIQkRxazdSbVRn/view?usp=sharing">GCC</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Joakim Nordell</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1RI-wtZYoDt4dk9KXgM-VtmTvB2nCYX3e8ts1KiTIhAs/edit?usp=sharing">TCPDUMP</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2015 - Leprechaun edition</h2>
+							<h4>The official <a href="https://drive.google.com/file/d/0BybszUG3ewMxaXdBMkYtNDJhalgtdWpwREhvV052VE0wcmNR/view?usp=sharing">program</a></h4>
+							<h3>Day one - 2015-05-07</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Martina Maggio</span> -
+							<span class="org">lth</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLWVdSdnhwaUlYd1lqYV92RmEzSHlhR0tYdmZZ/view?usp=sharing">rt-bench: a tool for profiling schedulers implmentation for real-time applications</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Rabin Vincent</span> -
+							<span class="org">axis</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxQ1h1R3d1QXVLV0tKWW04d0c1OW96SGM5QzlZ/view?usp=sharing">ftrace</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Robert Fekete</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td>Linux kernel graphics, past present, and future + what did android drag in?</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Kim Højgaard-Hansen</span> -
+							<span class="org">prevas</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxeXFyckNNRjZvZVpOMkE5c2RkSEtsNjBLLXRj/view?usp=sharing">Realising efficient industrial linux development</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Hans Holmberg</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td>Devicetree vs ACPI - A tale of two trees</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Per Persson</span> -
+							<span class="org">ericsson</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxVjBXem1VMEEzdzA/view?usp=sharing">Calvin - a platform for IoT development</a> - available on <a href="https://github.com/EricssonResearch/calvin-base">GitHub</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Hans Holmberg</span> &amp; <span class="pres">Anders Nilsson</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td>Minnowboard MAX &amp; Edison dev boards</td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h3>Day two - 2015-05-08</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Octavian Purdila</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxUVRNSThYWjBncndabndaUmliTmptWHdrb2tZ/view?usp=sharing">Shaping the linux kernel MPTCP implementation thowards upstream acceptance</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Joakim Bech</span> -
+							<span class="org">linaro</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1pXCxGh0eCW0S-xgLOZoGhmRxPkd8xepzYXC_eAWoU44/edit?usp=sharing">Trustzone</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Mikael Lindberg</span> -
+							<span class="org">axis</span>
+						</td>
+						<td>Better CPU governor joint project SONY/LU</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Christoffer Jerkeby</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxZXg2anVHMmVwOEtFTTR2MjFOSzRwOWxWejc4/view?usp=sharing">The python-wifi API &amp; the wifirssi tool</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">David Henningsson</span>
+						</td>
+						<td>HDA-jack-retask</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Julian Coccia</span> -
+							<span class="org">ericsson</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLTXpQWjF1YUFvSEYySDlMYTluRDZlR3RQV3NR/view?usp=sharing">FOSS handling</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Javier González</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxQV9abXpoc201ZC12OU1SSDRkYldMRjBuMzhR/view?usp=sharing">Linux kernel abstractions for open-channel solid state drives</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2014 - kerneval edition</h2>
+							<p>The first ever LLC</p>
+							<h3>Day one - 2014-05-19</h3>
+						</td>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Linus Walleij</span> -
+							<span class="org">linaro</span>
+						</td>
+						<td><a href="https://docs.google.com/presentation/d/1Adel9St2FxH6MurqPnWRNnOuO6F7ZUa8F3S0IqEcBTM">Kernel maintenance &amp; git</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Ulf Hansson</span> -
+							<span class="org">linaro</span>
+						</td>
+						<td>The MMC subsystem</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Hans Holmberg</span> -
+							<span class="org">intel_otc</span>
+						</td>
+						<td>Tidying a patch mountain</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Julian Coccia</span> -
+							<span class="org">ericsson</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxbGdHQ0VUTG5PUHB6UTBVR2VtSlJnZnhPSDk0/view?usp=sharing">Ericsson FOSS process</a></td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h3>Day two - 2014-05-20</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Jesper Nilsson</span> -
+							<span class="org">axis</span>
+						</td>
+						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxZjdVNnY5XzZORUJJTnhLOHJhN3JpUkNWNUZ3/view?usp=sharing">Doing it wrong</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">David Henningsson</span> -
+							<span class="org">canonical</span>
+						</td>
+						<td>Audio stack introduction</td>
+					</tr>
+				</table>
+			</div>
+			<div id="t-shirt">
+				<table>
+					<tr>
+						<td><h2>LLC 2017</h2></td>
+					</tr>
+					<tr>
+						<td><img src="" data-src="images/t-shirts/llc-shirt-2017.svg" width="800" height="300" alt="T-Shirt design for LLC 2017"></td>
+					<tr>
+						<td><h2>LLC 2016</h2></td>
+					</tr>
+					<tr>
+						<td><img src="" data-src="images/t-shirts/llc-shirt-2016.svg" width="800" height="300" alt="T-Shirt design for LLC 2016"></td>
+					</tr>
+					<tr>
+						<td><h2>LLC 2015</h2></td>
+					</tr>
+					<tr>
+						<td><img src="" data-src="images/t-shirts/llc-shirt-2015.svg" width="800" height="300" alt="T-Shirt design for LLC 2015"></td>
+					</tr>
+					<tr>
+						<td><h2>LLC 2014</h2></td>
+					</tr>
+					<tr>
+						<td><img src="" data-src="images/t-shirts/llc-t-shirt-2014.png" width="450" height="363" alt="T-Shirt design for LLC 2014"></td>
+					</tr>
+				</table>
+
+			</div>
+			<div id="about" style="text-align: left;">
+				<p>The Lund Linux Conference (LLC) is a small, technical conference with focus on serving and building the local Linux community - a chance for Linux developers to meet, learn and get to know each other.</p>
+				<p>The community now stretches beyond Lund and we have a good bunch of people from Denmark as regulars, as well as people we’ve met from all over the world.</p>
+				<p>The idea for a conference in Lund was hatched, like all good conspiracies, over beer in a dungeon, during the <a href="http://events.linuxfoundation.org/events/archive/2013/linuxcon-europe">2013 Embedded Linux Conference in Edinburgh</a>. After realizing that surprisingly many people from the Lund region were regularly going to the same Linux conferences all over the world, Hans pitched the idea to the rest of the Lundensians of doing a small, yearly event in Lund. How hard could it be? We did not know how to do this, but saw no real reason why this would not work out beautifully. At least it could cut down on travelling costs.</p>
+				<p>After meeting up with some old friends at the Linaro office in Lund over glüewine and home baked cookies, the first conference crew was quickly formed with people from Linaro, Intel OTC, Axis and Ericsson, and the first conference was held in May 2014. It turned out we had a lot of kernel developers in the area, gathering 40 people at the event. Afterwards, we immediately decided to do it again, bigger and better the next year... and the rest is history :)</p>
+				<p>Three conferences later we still really don’t know what we’re doing, but it seems to be working. The community is growing and we now have trouble squeezing in all the awesome content we receive every year. We’re keeping true to the first guidelines we established the first year - a single-track, invite only, kernel-centric, free event focused on (technical) content over form.</p>
+			</div>
+			<div id="code" style="text-align:left;">
+				<h3 class="center">LLC code of conduct 1.0</h3>
+				<p>LLC is dedicated to providing a harassment-free conference experience for everyone. We do not tolerate harassment of conference participants in any form. Conference participants violating these rules may be sanctioned or expelled from the conference at the discretion of the conference organizers.</p>
+
+				<h4>Harassment includes, but is not limited to:</h4>
+				<ul>
+					<li>Verbal comments that reinforce social structures of domination</li>
+					<li>Sexual images in public spaces</li>
+					<li>Deliberate intimidation, stalking, or following</li>
+					<li>Harassing photography or recording</li>
+					<li>Sustained disruption of talks or other events</li>
+					<li>Inappropriate physical contact</li>
+					<li>Unwelcome sexual attention</li>
+					<li>Advocating for, or encouraging, any of the above behaviour</li>
+				</ul>
+				<h4>Enforcement</h4>
+				<p>Participants asked to stop any harassing behavior are expected to comply immediately</p>
+
+				<p>If a participant engages in harassing behaviour, event organisers retain the right to take any actions to keep the event a welcoming environment for all participants. This includes warning the offender or expulsion from the conference.</p>
+
+				<p>Event organisers may take action to redress anything designed to, or with the clear impact of, disrupting the event or making the environment hostile for any participants.</p>
+
+				<p>We expect participants to follow these rules at all event venues and event-related social activities. We think people should follow these rules outside event activities too!</p>
+
+				<h4>Reporting</h4>
+				<p>If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as possible. Conference staff can be identified by special badges and will introduce the whole conference. Harassment and other code of conduct violations reduce the value of our event for everyone. We want you to be happy at our event. People like you make our event a better place.</p>
+
+				<p>You can make a report either personally or anonymously.</p>
+
+				<h4>Anonymous Report</h4>
+				<p>You can make an anonymous report <a href="https://goo.gl/forms/EYmdtNA4sgpBelNN2">here</a>.</p>
+
+				<p>We can't follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.</p>
+
+				<h4>Personal Report</h4>
+				<p>You can make a personal report by:</p>
+				<ul>
+					<li>Mailing <a href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a>, which is constantly being monitored.</li>
+					<li>Contacting a staff member, identified by CREW badges.</li>
+				</ul>
+
+				<p>When taking a personal report, our staff will ensure you are safe and cannot be overheard. They may involve other event staff to ensure your report is managed properly. Once safe, we'll ask you to tell us about what happened. This can be upsetting, but we'll handle it as respectfully as possible, and you can bring someone to support you. You won't be asked to confront anyone and we won't tell anyone who you are.</p>
+
+				<p>Our team will be happy to help you contact hotel/venue security, local law enforcement, local support services, provide escorts, or otherwise assist you to feel safe for the duration of the event. We value your attendance.</p>
+
+				<h3 style="text-align: center;" >Be excellent to each other! /Bill&amp;Ted</h3>
+
+				<p class="center">Based on this <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">anti-harassment policy</a></p>
+			</div>
+		</div>
+	</body>
+</html>
+
