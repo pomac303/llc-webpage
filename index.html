@@ -39,6 +39,7 @@
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
+				align-items: center;
 			}
 			.divide {
 				text-align: center;
@@ -128,6 +129,7 @@
 				data = document.getElementById(subject);
 				lazy_load(data);
 				item.replaceChild(data.cloneNode(true), item.firstChild);
+				register_egg();
 			}
 			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
 		</script>
@@ -194,6 +196,22 @@
 				populate_organisations();
 				populate_presenters();
 			}
+
+			function register_egg() {
+				element = document.getElementById("because");
+				element.addEventListener("mouseover", egg_over);
+				element.addEventListener("mouseout", egg_out);
+			}
+			function egg_over() {
+				element = document.getElementById("because");
+				if (element)
+					element.src = "images/llc-2018-ian.jpg";
+			}
+			function egg_out() {
+				element = document.getElementById("because");
+				if (element)
+					element.src = element.getAttribute("data-src");
+			}
 			document.getElementsByTagName('body')[0].onpageshow = function() {change_subject(); populate()};
 		</script>
 		<div class="logo">
@@ -210,16 +228,18 @@
 			</div>
 		</div>
 		<br/>
-		<p class="center">
-			<!-- Place this code where you want the badge to render. -->
-			<a href="//plus.google.com/u/0/113384782132783208350?prsrc=3"
-   					rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#777;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
-				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">follow</span>
-				<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px;margin-top:8px;">Lund LinuxCon</span>
-				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">on</span>
-				<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" height="32" width="32"/>
-			</a>
-		</p>
+		<div class="center">
+			<p class="center">
+				<!-- Place this code where you want the badge to render. -->
+				<a href="//plus.google.com/u/0/113384782132783208350?prsrc=3"
+   						rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#777;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+					<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">follow</span>
+					<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px;margin-top:8px;">Lund LinuxCon</span>
+					<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">on</span>
+					<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" height="32" width="32"/>
+				</a>
+			</p>
+		</div>
 
 		<p class="center">
 			Contact us at <a href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a> or on <a href="ircs://irc.freenode.net/lundlc">#lundlc</a> at <a href="https://freenode.net/">freenode</a>
@@ -230,27 +250,23 @@
 
 				<!-- <h3>Keep in mind that the Lundkarneval will be on the 18-20th of May! more info <a href="http://lundakarnevalen.se/en/">here</a></h3> -->
 
-				<p style="text-align: left;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get such an invitation! All we ask for is that you have some interest in the Linux kernel from a technical perspective.
+				<p style="text-align: center;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get an invitation!</p>
+				<p style="text-align: center;">All we ask for is that you have some interest in the Linux kernel from a technical perspective.</p>
 				<!-- If you would like to join the conference, please use <a href="https://goo.gl/QoajCC">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly.--> </p> 
 				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
 
-				<!--
 				<table>
 					<tr>
 						<td class="divide">
-							<h2>We hope you come back again!</h2>
-							<a href="images/llc-2017-people.jpg">
-								<picture>
-									<source srcset="images/llc-2017-people-small.webp" width="800" height="217">
-									<img src="" data-src="images/llc-2017-people-small.jpg" width="800" height="217" alt="People at LLC 2017">
-								</picture>
+							<h2>LLC 2018 has come and gone, we had fun and we hope you did as well!</h2>
+							<a href="https://photos.app.goo.gl/NwKTllELhSPkRbT02">
+								<img id="because" src="" data-src="images/llc-2018-people-small.jpg" width="800" height="235" alt="People at LLC 2018">
 							</a>
-							<h5>(picture of the crowd just before lunch, day two)</h5>
 						</td>
 					</tr>
-				</table> -->
-				<table>
-				<!--	<tr>
+				</table>
+				<!-- <table>
+					<tr>
 						<th>time</th>
 						<th>presenter</th>
 						<th>presentation</th>
@@ -263,144 +279,8 @@
 						<td>9:00</td>
 						<td><a onclick="change_subject('crew')">the crew</a></td>
 						<td>Introduction</td>
-					</tr> -->
-					<tr>
-						<td class="divide" colspan=3>
-							<h2>Ouroboros-Unicorn edition - preliminary program</h2>
-							<!-- <h4>The official <a href="">program</a></h4> -->
-							<h3>Day one - 2018-05-03</h3>
-						</td>
 					</tr>
-					<tr>
-						<th>Time</th>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>8:30</td>
-						<td colspan=2>The doors are open, come and grab a cup of coffee and your name tag</td>
-					</tr>
-					<tr>
-						<td>9:00</td>
-						<td>the crew</td>
-						<td>Introduction</td>
-					</tr>
-					<tr>
-						<td>9:30</td>
-						<td><span class="pres">Johan Hovold</span></td>
-						<td>The serial device bus</td>
-					</tr>
-					<tr>
-						<td>10:15</td>
-						<td colspan=2>Break</td>
-					</tr>
-					<tr>
-						<td>10:30</td>
-						<td><span class="pres">Philippe Bonnet</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxcklFSGp2MWN6ZjV4cTZJU2VZVjFOaFM3R3Zz">Near data procéssing and it's implications for Linux</a></td>
-					</tr>
-					<tr>
-						<td>11:15</td>
-						<td><span class="pres">Hans Holmberg</span></td>
-						<td>PBLK - a guided tour</td>
-					</tr>
-					<tr>
-						<td>12:00</td>
-						<td colspan=2>Lunch (not included)</td>
-					</tr>
-					<tr>
-						<td>13:00</td>
-						<td><span class="pres">Martin Hell</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxRk5oMFVZSjROR1ByMlBGLTBWTl9rdWZ6R19r">The SECONDS project</a></td>
-					</tr>
-					<tr>
-						<td>13:45</td>
-						<td><span class="pres">Robert Fekete</span> and <span class="pres">Joakim Nordell</span></td>
-						<td>Security in cars</td>
-					</tr>
-					<tr>
-						<td>14:30</td>
-						<td colspan=2>Break</td>
-					</tr>
-					<tr>
-						<td>15:00</td>
-						<td colspan=2>Discussion: Security</td>
-					</tr>
-					<tr>
-						<td>16:00</td>
-						<td colspan=2>Demos, Beverages, Snacks</td>
-					</tr>
-					<tr>
-						<td>~18:30 - ~21:00</td>
-						<td colspan=2>Social activity: Glorias</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day Two - 2018-05-04</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Time</th>
-						<th>Presenter</th>
-						<th>Subject</th>
-					</tr>
-					<tr>
-						<td>8:30</td>
-						<td colspan=2>The doors are open, come and grab a cup of coffee</td>
-					</tr>
-					<tr>
-						<td>9:00</td>
-						<td><span class="pres">Linus Walleij</span></td>
-						<td><a href="https://drive.google.com/open?id=1c2fNr-Rih0LHsQ5pqrDG7qaUXXsLslzw">Maintaining really old ARM systems</a></td>
-					</tr>
-					<tr>
-						<td>9:45</td>
-						<td><span class="pres">Niklas Cassel</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxVTlVMld3bW5KX3hfZkV3Q3ctNldQSUl5cGM4">An introduction to PCIe<</a>/td>
-					</tr>
-					<tr>
-						<td>10:30</td>
-						<td colspan=2>Break</td>
-					</tr>
-					<tr>
-						<td>10:45</td>
-						<td><span class="pres">Jesper Dangaard Brouer</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxU1dWNGljVkVhWlVjaWxyckZWS2p3cENIbzZB">XDP - now with redirects</a></td>
-					</tr>
-					<tr>
-						<td>11:30</td>
-						<td><span class="pres">Björn Töpel</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxNXdHWGVIRmx3ZEp5LXZGTEVxMTBCVTdmeVgw">AF_XDP: An order of magnitude faster packet processing with standard Linux</a></td>
-					</tr>
-					<tr>
-						<td>12:15</td>
-						<td colspan=2>Lunch (not included)</td>
-					</tr>
-					<tr>
-						<td>13:15</td>
-						<td><span class="pres">Simon A. F. Lund</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxYUxtQWtxell0SXFQR3h2SzRJdWw3d25Sa2xR">Presentation</a> + Discussion: Testing</td>
-					</tr>
-					<tr>
-						<td>14:15</td>
-						<td><span class="pres">Octavian Purdila</td>
-						<td>Upstreaming the linux kernel teaching project</td>
-					</tr>
-					<tr>
-						<td>14:45</td>
-						<td colspan=2>Break</td>
-					</tr>
-					<tr>
-						<td>15:15</td>
-						<td colspan=2>Lightning talks: TBA</td>
-					</tr>
-					<tr>
-						<td>16:00</td>
-						<td colspan=2>Finishing up: Conclusions, networking, snacks and drinks</td>
-					</tr>
-
-
-				</table>
+				</table> -->
 			</div>
 			<div id="crew">
 				<h3 class="crew"><span class="pres">Hans Holmberg</span> - <span class="org">cnexlabs</span></h3>
@@ -431,12 +311,75 @@
 
 			</div>
 			<div id="past">
-				<br/>
+				<br/> <!--
 				<h2>2018</h2>
 				<p>Not here yet, but check out the current page, linked above</p>
-				<br/>
+				<br/> -->
 				<table>
-
+					<tr>
+						<td class="divide" colspan=3>
+							<h2>2018 - Ouroboros-Unicorn edition</h2>
+							<!-- <h4>The official <a href="">program</a></h4> -->
+							<h3>Day one - 2018-05-03</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td><span class="pres">Johan Hovold</span></td>
+						<td>The serial device bus</td>
+					</tr>
+					<tr>
+						<td><span class="pres">Philippe Bonnet</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxcklFSGp2MWN6ZjV4cTZJU2VZVjFOaFM3R3Zz">Near data procéssing and it's implications for Linux</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Hans Holmberg</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxWWxhMG8wdUlwZGZUUHN1RU9nOHpyNFI5cVdr">PBLK - a guided tour</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Martin Hell</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxRk5oMFVZSjROR1ByMlBGLTBWTl9rdWZ6R19r">The SECONDS project</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Robert Fekete</span> and <span class="pres">Joakim Nordell</span></td>
+						<td>Security in cars</td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=3>
+							<h3>Day Two - 2018-05-04</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Subject</th>
+					</tr>
+					<tr>
+						<td><span class="pres">Linus Walleij</span></td>
+						<td><a href="https://drive.google.com/open?id=1c2fNr-Rih0LHsQ5pqrDG7qaUXXsLslzw">Maintaining really old ARM systems</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Niklas Cassel</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxVTlVMld3bW5KX3hfZkV3Q3ctNldQSUl5cGM4">An introduction to PCIe</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Jesper Dangaard Brouer</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxU1dWNGljVkVhWlVjaWxyckZWS2p3cENIbzZB">XDP - now with redirects</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Björn Töpel</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxNXdHWGVIRmx3ZEp5LXZGTEVxMTBCVTdmeVgw">AF_XDP: An order of magnitude faster packet processing with standard Linux</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Simon A. F. Lund</span></td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxYUxtQWtxell0SXFQR3h2SzRJdWw3d25Sa2xR">Presentation</a> + Discussion: Testing</td>
+					</tr>
+					<tr>
+						<td><span class="pres">Octavian Purdila</td>
+						<td>Upstreaming the <a href="https://linux-kernel-labs.github.io/master/">linux kernel teaching project</a></td>
+					</tr>
 					<tr>
 						<td class="divide" colspan=2>
 							<h2>2017 - Mucha edition</h2>
@@ -846,6 +789,12 @@
 			</div>
 			<div id="t-shirt">
 				<table>
+					<tr>
+						<td><h2>LLC 2018</h2></td>
+					<tr>
+					</tr>
+						<td><img src="" data-src="images/t-shirts/llc-shirt-2018.svg" width="800" height="300" alt="T-Shirt design for LLC 2018"></td>
+					</tr>
 					<tr>
 						<td><h2>LLC 2017</h2></td>
 					</tr>

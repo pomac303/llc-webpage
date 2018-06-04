@@ -39,6 +39,7 @@
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
+				align-items: center;
 			}
 			.divide {
 				text-align: center;
@@ -128,6 +129,7 @@
 				data = document.getElementById(subject);
 				lazy_load(data);
 				item.replaceChild(data.cloneNode(true), item.firstChild);
+				register_egg();
 			}
 			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
 		</script>
@@ -193,9 +195,7 @@
 				populate_buttons();
 				populate_organisations();
 				populate_presenters();
-				register_egg();
 			}
-
 
 			function register_egg() {
 				element = document.getElementById("because");
@@ -203,11 +203,14 @@
 				element.addEventListener("mouseout", egg_out);
 			}
 			function egg_over() {
-				document.getElementById("because").src = "images/llc-2018-ian.jpg";
+				element = document.getElementById("because");
+				if (element)
+					element.src = "images/llc-2018-ian.jpg";
 			}
 			function egg_out() {
 				element = document.getElementById("because");
-				element.src = element.getAttribute("data-src");
+				if (element)
+					element.src = element.getAttribute("data-src");
 			}
 			document.getElementsByTagName('body')[0].onpageshow = function() {change_subject(); populate()};
 		</script>
@@ -225,16 +228,18 @@
 			</div>
 		</div>
 		<br/>
-		<p class="center">
-			<!-- Place this code where you want the badge to render. -->
-			<a href="//plus.google.com/u/0/113384782132783208350?prsrc=3"
-   					rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#777;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
-				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">follow</span>
-				<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px;margin-top:8px;">Lund LinuxCon</span>
-				<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">on</span>
-				<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" height="32" width="32"/>
-			</a>
-		</p>
+		<div class="center">
+			<p class="center">
+				<!-- Place this code where you want the badge to render. -->
+				<a href="//plus.google.com/u/0/113384782132783208350?prsrc=3"
+   						rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#777;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+					<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">follow</span>
+					<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px;margin-top:8px;">Lund LinuxCon</span>
+					<span style="display:inline-block;vertical-align:top;margin-right:5px;margin-top:8px;">on</span>
+					<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" height="32" width="32"/>
+				</a>
+			</p>
+		</div>
 
 		<p class="center">
 			Contact us at <a href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a> or on <a href="ircs://irc.freenode.net/lundlc">#lundlc</a> at <a href="https://freenode.net/">freenode</a>
@@ -306,10 +311,10 @@
 
 			</div>
 			<div id="past">
-				<br/>
+				<br/> <!--
 				<h2>2018</h2>
 				<p>Not here yet, but check out the current page, linked above</p>
-				<br/>
+				<br/> -->
 				<table>
 					<tr>
 						<td class="divide" colspan=3>
