@@ -8,16 +8,13 @@ GZIP_COMMAND = gzip -k -9
 .PHONY: all
 all: $(SVG_GZ_FILES) $(HTML_GZ_FILES)
 
-# zstd keeps timestamp so we have to touch it, silly zstd... =)
 %.svg.gz: %.svg
 	@echo "* Compressing $?"
 	@$(GZIP_COMMAND) $< -f
-	@touch $@
 
 %.html.gz: %.html
 	@echo "* Compressing $?"
 	@$(GZIP_COMMAND) $< -f
-	@touch $@
 
 clean:
 	rm -f $(SVG_GZ_FILES) $(HTML_GZ_FILES) $(SVGZ_FILES)
