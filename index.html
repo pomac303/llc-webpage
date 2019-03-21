@@ -3,7 +3,7 @@
 	<head>
 		<title>lundlinuxcon.org - A small linux conference in Lund</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-		<meta name="viewport" content="width=1000; height=device-height; initial-scale=0.42;">
+		<meta name="viewport" content="width=1000, initial-scale=0.42">
 		<meta name="description" content="Lund LinuxCon is a small linux conference in Lund">
 		<meta name="keywords" content="Lund Linux Conferece, Lund Linux Con, lund, linux">
 		<meta name="robots" content="index,follow">
@@ -289,7 +289,7 @@
 
 			function lazy_load(data) {
 				images = data.getElementsByTagName('img');
-				for (let index = 0; index < images.length; ++index) {
+				for (index = 0; index < images.length; ++index) {
 					if (images[index].getAttribute('src') == "")
 						images[index].src = images[index].getAttribute("data-src");
 				}
@@ -308,8 +308,7 @@
 				register_egg();
 			}
 			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
-		</script>
-		<script nonce="090F4F1B3EC91062B38E02076B815545" type="application/javascript">
+
 			/* Companies/orgnaisations */
 			var organisations = {
 				axis: {			title: "Axis",		url: "https://www.axis.com/"		},
