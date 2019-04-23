@@ -82,6 +82,7 @@
 				color: #EEEEEE;
 				text-shadow: black 0.1em 0.1em 0.2em;
 				padding-bottom: 0;
+				white-space: nowrap;
 			}
 			a.links:hover {
 				background-color: #EEEEEE;
@@ -328,7 +329,7 @@
 				data = document.getElementById(subject);
 				lazy_load(data);
 				item.replaceChild(data.cloneNode(true), item.firstChild);
-				register_egg();
+				//register_egg();
 			}
 			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
 
@@ -465,6 +466,7 @@
 				<p style="text-align: center;">If you would like to join the conference, please use <a href="https://goo.gl/QoajCC">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly</p> 
 				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
 
+				<!--
 				<table>
 					<tr>
 						<td class="divide">
@@ -475,6 +477,7 @@
 						</td>
 					</tr>
 				</table>
+				-->
 				<!-- <table>
 					<tr>
 						<th>time</th>
@@ -491,6 +494,152 @@
 						<td>Introduction</td>
 					</tr>
 				</table> -->
+				<table>
+                                        <tr>
+                                                <td class="divide" colspan=3>
+                                                        <h2>2019 -- Lion? Lyon?</h2>
+                                                        <h4>The official <a href="">program</a></h4>
+                                                        <h3>Day one - 2019-05-09</h3>
+                                                </td>
+                                        </tr>
+
+					<tr>
+						<th>time</th>
+						<th>presenter</th>
+						<th>presentation</th>
+					</tr>
+					<tr>
+						<td colspan=2>8:30</td>
+						<td>The doors are open. Come and grab a cup of coffee and your name tag!</td>
+					</tr>
+					<tr>
+						<td>9:00</td>
+						<td><a onclick="change_subject('crew')">the crew</a></td>
+						<td>Introduction</td>
+					</tr>
+					<tr>
+						<td>9:30</td>
+						<td>Toke Høiland-Jørgensen</td>
+						<td>Overview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</td>
+					</tr>
+					<tr>
+						<td colspan=2>10:15</td>
+						<td>Break</td>
+					</tr>
+					<tr>
+						<td>10:30</td>
+						<td>Uladzislau Rezki</td>
+						<td>Improving KVA/VMAP allocator in Linux kernel</td>
+					</tr>
+					<tr>
+						<td>11:15</td>
+						<td>Matthias Brugger</td>
+						<td>kdump/kexec internals</td>
+					</tr>
+					<tr>
+						<td colspan=2>12:00</td>
+						<td>Lunch</td>
+					</tr>
+					<tr>
+						<td>13:00</td>
+						<td>Andy Polyakov</td>
+						<td>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</td>
+					</tr>
+					<tr>
+						<td>13:45</td>
+						<td>Thomas Gleixner</td>
+						<td>Mopping up kernel messes one at a time, this time: licensing</td>
+					</tr>
+					<tr>
+						<td colspan=2>14:30</td>
+						<td>Break</td>
+					</tr>
+					<tr>
+						<td colspan=2>15:00</td>
+						<td>Discussion: Performance</td>
+					</tr>
+					<tr>
+						<td colspan=2>16:00</td>
+						<td>Demos, beverages and snacks</td>
+					</tr>
+					<tr>
+						<td colspan=2>~18:30 - ~21:00</td>
+						<td>Social activity</td>
+					</tr>
+				</table>
+				<table>
+                                        <tr>
+                                                <td class="divide" colspan=3>
+                                                        <h3>Day two - 2019-05-10</h3>
+                                                </td>
+                                        </tr>
+
+					<tr>
+						<th>time</th>
+						<th>presenter</th>
+						<th>presentation</th>
+					</tr>
+					<tr>
+						<td colspan=2>8:30</td>
+						<td>The doors are open. Come and grab a cup of coffee</td>
+					</tr>
+					<tr>
+						<td>9:00</td>
+						<td>Jesper Dangaard Brouer</td>
+						<td>XDP As a building block for other FOSS projects</td>
+					</tr>
+					<tr>
+						<td>9:30</td>
+						<td>
+							<span class="pres">Javier González</span>
+						</td>
+						<td>XDSP: eXpress Data Storage Path</td>
+					<tr>
+						<td colspan=2>10:00</td>
+						<td>Discussion / QA: XD.* / BPF</td>
+					</tr>
+					<tr>
+						<td colspan=2>10:30</td>
+						<td>Break</td>
+					</tr>
+					<tr>
+						<td>10:45</td>
+						<td>Klaus Jensen</td>
+						<td>Binary Index and Journal Embedding in The Linear Tape File System</td>
+					</tr>
+					<tr>
+						<td>11:30</td>
+						<td>Daniel Baluta</td>
+						<td>Sound Open Firmware with a focus on i.MX integration</td>
+					</tr>
+					<tr>
+						<td colspan=2>12:15</td>
+						<td>Lunch</td>
+					</tr>
+					<tr>
+						<td>13:15</td>
+						<td>Damien Le Moal</td>
+						<td>Presentation + Discussion: RISC-V</td>
+					</tr>
+					<tr>
+						<td>14:15</td>
+						<td>Matias Bjørling</td>
+						<td>ZNS - Zoned Namespaces</td>
+					</tr>
+					<tr>
+						<td colspan=2>15:00</td>
+						<td>Break</td>
+					</tr>
+					<tr>
+						<td colspan=2>15:15</td>
+						<td>Lightning talks:<br/>LZBD - A new, zoned, lightnvm target (Hans Holmberg)<br/>A Security Gateway Based on Linux or anything else? (Joakim Nordell)<br/>imx8mq: cpuidle: GIC wake_request workaround in kernel and ATF (Abel Vesa)</td>
+					</tr>
+					<tr>
+						<td colspan=2>16:30</td>
+						<td>Finishing up: Conclusions, networking, snacks and drinks</td>
+					</tr>
+				</table>
+
 			</div>
 			<div id="crew">
 				<h3 class="crew"><span class="pres">Hans Holmberg</span> - <span class="org">cnexlabs</span></h3>
