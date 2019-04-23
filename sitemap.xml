@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://www.lundlinuxcon.org/</loc>
+		<loc>https://www.lundlinuxcon.org/</loc>
 		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=current</loc>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=about</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=crew</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=past</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=t-shirt</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.lundlinuxcon.org/?page=code</loc>
+		<changefreq>monthly</changefreq>
 	</url>
 </urlset>
