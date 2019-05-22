@@ -335,6 +335,7 @@
 
 			/* Companies/orgnaisations */
 			var organisations = {
+				arm: {			title: "ARM",		url: "https://www.arm.com/"		},
 				axis: {			title: "Axis",		url: "https://www.axis.com/"		},
 				//canonical: {		title: "Canonical",	url: "https://www.canonical.com/"	},
 				cnexlabs: {		title: "CNEX Labs",	url: "https://www.cnexlabs.com/"	},
@@ -344,7 +345,8 @@
 				lth: {			title: "LTH",		url: "http://www.lth.se/"		},
 				prevas: {		title: "Prevas",	url: "http://www.prevas.com/"		},
 				itu: {			title: "ITU",		url: "https://www.itu.dk/"		},
-				westerndigital: {	title: 'Westerndigital',url: "https://www.wdc.com/"		}
+				westerndigital: {	title: 'Westerndigital',url: "https://www.wdc.com/"		},
+				samsung_semi: {		title: "Samsung", url: "https://www.samsung.com/semiconductor/" }
 			}
 			/* presenters/crew with website/email */
 			var presenters = {
@@ -470,18 +472,17 @@
 				<p style="text-align: center;">If you would like to join the conference, please use <a href="https://goo.gl/QoajCC">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly</p> 
 				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
 
-				<!--
 				<table>
 					<tr>
 						<td class="divide">
-							<h2>LLC 2018 has come and gone, we had fun and we hope you did as well!</h2>
-							<a href="https://photos.app.goo.gl/NwKTllELhSPkRbT02">
-								<img id="because" src="" data-src="images/llc-2018-people-small.jpg" width="800" height="235" alt="People at LLC 2018">
+							<h2>LLC 2019 has come and gone, we had fun and we hope you did as well!</h2>
+							<a href="https://photos.app.goo.gl/Sg8kPbPid7Gu5k45A">
+								<img src="" data-src="images/llc-2019-animated.webp" width="806" height="206" alt="People at LLC 2019">
 							</a>
+							<p>(sorry, using webp since it's ~300KB wile gif was 1.2MB)</p>
 						</td>
 					</tr>
 				</table>
-				-->
 				<!-- <table>
 					<tr>
 						<th>time</th>
@@ -498,152 +499,6 @@
 						<td>Introduction</td>
 					</tr>
 				</table> -->
-				<table>
-                                        <tr>
-                                                <td class="divide" colspan=3>
-                                                        <h2>2019 -- Lion? Lyon?</h2>
-                                                        <h4>The official <a href="https://drive.google.com/file/d/0BybszUG3ewMxQWdNQ09Oa3N3LXQyOEozcVF5TEZtTENjaW9V/view?usp=sharing">program</a></h4>
-                                                        <h3>Day one - 2019-05-09</h3>
-                                                </td>
-                                        </tr>
-
-					<tr>
-						<th>time</th>
-						<th>presenter</th>
-						<th>presentation</th>
-					</tr>
-					<tr>
-						<td colspan=2>8:30</td>
-						<td>The doors are open. Come and grab a cup of coffee and your name tag!</td>
-					</tr>
-					<tr>
-						<td>9:00</td>
-						<td><a onclick="change_subject('crew')">the crew</a></td>
-						<td>Introduction</td>
-					</tr>
-					<tr>
-						<td>9:30</td>
-						<td>Toke Høiland-Jørgensen</td>
-						<td>Overview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</td>
-					</tr>
-					<tr>
-						<td colspan=2>10:15</td>
-						<td>Break</td>
-					</tr>
-					<tr>
-						<td>10:30</td>
-						<td>Uladzislau Rezki</td>
-						<td>Improving KVA/VMAP allocator in Linux kernel</td>
-					</tr>
-					<tr>
-						<td>11:15</td>
-						<td>Matthias Brugger</td>
-						<td>kdump/kexec internals</td>
-					</tr>
-					<tr>
-						<td colspan=2>12:00</td>
-						<td>Lunch</td>
-					</tr>
-					<tr>
-						<td>13:00</td>
-						<td>Andy Polyakov</td>
-						<td>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</td>
-					</tr>
-					<tr>
-						<td>13:45</td>
-						<td>Thomas Gleixner</td>
-						<td>Mopping up kernel messes one at a time, this time: licensing</td>
-					</tr>
-					<tr>
-						<td colspan=2>14:30</td>
-						<td>Break</td>
-					</tr>
-					<tr>
-						<td colspan=2>15:00</td>
-						<td>Discussion: Performance</td>
-					</tr>
-					<tr>
-						<td colspan=2>16:00</td>
-						<td>Demos, beverages and snacks</td>
-					</tr>
-					<tr>
-						<td colspan=2>~18:30 - ~21:00</td>
-						<td>Social activity</td>
-					</tr>
-				</table>
-				<table>
-                                        <tr>
-                                                <td class="divide" colspan=3>
-                                                        <h3>Day two - 2019-05-10</h3>
-                                                </td>
-                                        </tr>
-
-					<tr>
-						<th>time</th>
-						<th>presenter</th>
-						<th>presentation</th>
-					</tr>
-					<tr>
-						<td colspan=2>8:30</td>
-						<td>The doors are open. Come and grab a cup of coffee</td>
-					</tr>
-					<tr>
-						<td>9:00</td>
-						<td>Jesper Dangaard Brouer</td>
-						<td>XDP As a building block for other FOSS projects</td>
-					</tr>
-					<tr>
-						<td>9:30</td>
-						<td>
-							<span class="pres">Javier González</span>
-						</td>
-						<td>XDSP: eXpress Data Storage Path</td>
-					<tr>
-						<td colspan=2>10:00</td>
-						<td>Discussion / QA: XD.+ / BPF</td>
-					</tr>
-					<tr>
-						<td colspan=2>10:30</td>
-						<td>Break</td>
-					</tr>
-					<tr>
-						<td>10:45</td>
-						<td>Klaus Jensen</td>
-						<td>Binary Index and Journal Embedding in The Linear Tape File System</td>
-					</tr>
-					<tr>
-						<td>11:30</td>
-						<td>Daniel Baluta</td>
-						<td>Sound Open Firmware with a focus on i.MX integration</td>
-					</tr>
-					<tr>
-						<td colspan=2>12:15</td>
-						<td>Lunch</td>
-					</tr>
-					<tr>
-						<td>13:15</td>
-						<td>Damien Le Moal</td>
-						<td>Presentation + Discussion: RISC-V</td>
-					</tr>
-					<tr>
-						<td>14:15</td>
-						<td>Matias Bjørling</td>
-						<td>ZNS - Zoned Namespaces</td>
-					</tr>
-					<tr>
-						<td colspan=2>15:00</td>
-						<td>Break</td>
-					</tr>
-					<tr>
-						<td colspan=2>15:15</td>
-						<td>Lightning talks:<br/>LZBD - A new, zoned, lightnvm target (<span class="pres">Hans Holmberg</span>)<br/>A Security Gateway Based on Linux or anything else? (Joakim Nordell)<br/>imx8mq: cpuidle: GIC wake_request workaround in kernel and ATF (Abel Vesa)</td>
-					</tr>
-					<tr>
-						<td colspan=2>16:30</td>
-						<td>Finishing up: Conclusions, networking, snacks and drinks</td>
-					</tr>
-				</table>
-
 			</div>
 			<div id="crew">
 				<h3 class="crew"><span class="pres">Frey Alfredsson</span> - <span class="org">itu</span></h3>
@@ -655,13 +510,13 @@
 				<h3 class="crew"><span class="pres">Ian Kumlien</span> - <span class="org">ericsson</span></h3>
 				<p class="crew">We've seen him sending <a href="https://marc.info/?l=linux-netdev&m=148334514915554&w=2">patches</a>, but now he seems to have mounted lkml read-only. We are still waiting for more patches :)... oh, and the one responsible/to-blame&trade; for the webpage and t-shirt designs</p>
 
-				<h3 class="crew"><span class="pres">Javier González</span> - <span class="org">cnexlabs</span></h3>
+				<h3 class="crew"><span class="pres">Javier González</span> - <span class="org">samsung_semi</span></h3>
 				<p class="crew">building the Open-Channel SSD ecosystem on Linux. Main developer of LightNVM's open source Flash Translation Layer (pblk). Interested in NAND and next generation non-volatile memories</p>
 
 				<h3 class="crew"><span class="pres">Jesper Nilsson</span> - <span class="org">axis</span></h3>
 				<p class="crew">Long time Unix and Linux developer, maintainer of the Axis CRIS port of Linux from 2008 to it's removal in 2018. Working with Linux kernel drivers and debugging for Axis SoC</p>
 
-				<h3 class="crew"><span class="pres">Linus Walleij</span> - <span class="org">linaro</span></h3>
+				<h3 class="crew"><span class="pres">Linus Walleij</span> - <span class="org">arm</span></h3>
 				<p class="crew">We claim that it's a really interesting story</p>
 
 				<h3 class="crew"><span class="pres">Niklas Cassel</span> - <span class="org">linaro</span></h3>
@@ -682,6 +537,86 @@
 				<p>Not here yet, but check out the current page, linked above</p>
 				<br/> -->
 				<table>
+                                        <tr>
+                                                <td class="divide" colspan=2>
+                                                        <h2>2019 -- Lion? Lyon?</h2>
+                                                        <h3>Day one - 2019-05-09</h3>
+                                                </td>
+                                        </tr>
+
+					<tr>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td>Toke Høiland-Jørgensen</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxMHM2ci16THZ5cEpFSGNsaG80YVlyVUx4c3I0">verview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</a></td>
+					</tr>
+					<tr>
+						<td>Uladzislau Rezki</td>
+						<td><a href="https://drive.google.com/open?id=1u_z7HCFPTavP-3wW7OYGe-WlRUD-FaP1">Improving KVA/VMAP allocator in Linux kernel</a> (merged in 5.2)</td>
+					</tr>
+					<tr>
+						<td>Matthias Brugger</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxTU5lZzdfTllwYWFEU2h3S2I5RWNHV2xseHhN">kdump/kexec internals</a></td>
+					</tr>
+					<tr>
+						<td>Andy Polyakov</td>
+						<td>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</td>
+					</tr>
+					<tr>
+						<td>Thomas Gleixner</td>
+						<td>Mopping up kernel messes one at a time, this time: licensing</td>
+					</tr>
+                                        <tr>
+                                                <td class="divide" colspan=2>
+                                                        <h3>Day two - 2019-05-10</h3>
+                                                </td>
+                                        </tr>
+					<tr>
+						<th>presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td>Jesper Dangaard Brouer</td>
+						<td>XDP As a building block for other FOSS projects</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="pres">Javier González</span>
+						</td>
+						<td><a href="https://drive.google.com/open?id=0B60z2Cn5EmKLeEFhUDhTWms5M3Aza2ZqRzZGVHh0TFZIYmE4">XDSP: eXpress Data Storage Path</a></td>
+					<tr>
+						<td>Klaus Jensen</td>
+						<td><a href="https://drive.google.com/open?id=1K5vLnUhj9BdoBzXiV0hrHlZtqEXSGIgQ">Binary Index and Journal Embedding in The Linear Tape File System</a></td>
+					</tr>
+					<tr>
+						<td>Daniel Baluta</td>
+						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxQ3pzWmcxOWs5OE1TZ29ITGJ6NDlXVGYwTXpB">Sound Open Firmware with a focus on i.MX integration</a></td>
+					</tr>
+					<tr>
+						<td>Damien Le Moal</td>
+						<td>RISC-V</td>
+					</tr>
+					<tr>
+						<td>Matias Bjørling</td>
+						<td>ZNS - Zoned Namespaces</td>
+					</tr>
+					<tr>
+						<td colspan=2><h4>Lightning talks:</h4><td/>
+					</tr>
+					<tr>
+						<td><span class="pres">Hans Holmberg</span></td>
+						<td><a href="https://drive.google.com/open?id=1k2ojnCfk8Vn7kMsEX003-15uhKkOJkMy">LZBD - A new, zoned, lightnvm target</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Robert Fekete</span></td>
+						<td>A Security Gateway Based on Linux or anything else?</td>
+					</tr>
+					<tr>
+						<td><span class="pres">Abel Vesa</span></td>
+						<td>imx8mq: cpuidle: GIC wake_request workaround in kernel and ATF (Abel Vesa)</td>
+					</tr>
 					<tr>
 						<td class="divide" colspan=3>
 							<h2>2018 - Ouroboros-Unicorn edition</h2>
@@ -720,7 +655,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentationt</th>
 					</tr>
 					<tr>
 						<td><span class="pres">Linus Walleij</span></td>
@@ -755,7 +690,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -857,7 +792,7 @@
 						</td>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -918,7 +853,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -984,7 +919,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -1042,7 +977,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -1098,7 +1033,7 @@
 						</td>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
@@ -1135,7 +1070,7 @@
 					</tr>
 					<tr>
 						<th>Presenter</th>
-						<th>Subject</th>
+						<th>Presentation</th>
 					</tr>
 					<tr>
 						<td>
