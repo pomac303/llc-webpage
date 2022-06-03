@@ -28,14 +28,15 @@
 		<style type="text/css">
 			@font-face {
 				font-family: Benguiat;
-				src: url(fonts/Benguiat.ttf);
+				src: local('Benguiat'), url(fonts/Benguiat.ttf);
+				font-display: swap;
 			}
 			body {
-				font-size: 12pt;
+				font-size: 18pt;
 			}
 			@media(min-width:60em) {
 				body {
-					font-size: 10pt;
+					font-size: 18pt;
 				}
 			}
 			html {
@@ -72,7 +73,7 @@
 				width: 844px;
 			}
 			a.links {
-				font-size: 12pt;
+				font-size: 16pt;
 				border-radius: 50pt 50pt 0pt 0pt;
 				padding-left: 1em;
 				padding-right: 1em;
@@ -150,6 +151,15 @@
 				top: -1.2em;
 				-webkit-text-fill-color: #aa0000;
 				-webkit-text-stroke-width: 0pt
+			}
+			a[href*="youtube.com"] {
+				padding-left: 25pt;
+				width: 25pt;
+				max-height: 1em;
+				background-size: 25pt 0.9em;
+				background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjEuMDAxIDQ2MS4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ2MS4wMDEgNDYxLjAwMSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggc3R5bGU9ImZpbGw6I2Y2MWMwZCIgZD0iTTM2NS4yNTcgNjcuMzkzSDk1Ljc0NEM0Mi44NjYgNjcuMzkzIDAgMTEwLjI1OSAwIDE2My4xMzd2MTM0LjcyOGMwIDUyLjg3OCA0Mi44NjYgOTUuNzQ0IDk1Ljc0NCA5NS43NDRoMjY5LjUxM2M1Mi44NzggMCA5NS43NDQtNDIuODY2IDk1Ljc0NC05NS43NDRWMTYzLjEzN2MwLTUyLjg3OC00Mi44NjYtOTUuNzQ0LTk1Ljc0NC05NS43NDR6bS02NC43NTEgMTY5LjY2My0xMjYuMDYgNjAuMTIzYy0zLjM1OSAxLjYwMi03LjIzOS0uODQ3LTcuMjM5LTQuNTY4VjE2OC42MDdjMC0zLjc3NCAzLjk4Mi02LjIyIDcuMzQ4LTQuNTE0bDEyNi4wNiA2My44ODFjMy43NDggMS44OTkgMy42ODMgNy4yNzQtLjEwOSA5LjA4MnoiLz48L3N2Zz4=");
+				background-position: left;
+				background-repeat: no-repeat;
 			}
 		</style>
 		<!-- Location information and information about where it's located -->
@@ -365,12 +375,18 @@
 				'Krister Walfridsson': {	url: "https://kristerw.blogspot.com/"			}
 			};
 			function populate_buttons() {
-				document.getElementById("nav_current").addEventListener("click", function(){change_subject('current')});
-				document.getElementById("nav_about").addEventListener("click", function(){change_subject('about')});
-				document.getElementById("nav_crew").addEventListener("click", function(){change_subject('crew')});
-				document.getElementById("nav_past").addEventListener("click", function(){change_subject('past')});
-				document.getElementById("nav_tshirts").addEventListener("click", function(){change_subject('t-shirt')});
-				document.getElementById("nav_codeofcon").addEventListener("click", function(){change_subject('code')});
+				document.getElementById("nav_current").addEventListener("click",
+					function(e){e.preventDefault();change_subject('current')});
+				document.getElementById("nav_about").addEventListener("click",
+					function(e){e.preventDefault();change_subject('about')});
+				document.getElementById("nav_crew").addEventListener("click",
+					function(e){e.preventDefault();change_subject('crew')});
+				document.getElementById("nav_past").addEventListener("click",
+					function(e){e.preventDefault();change_subject('past')});
+				document.getElementById("nav_tshirts").addEventListener("click",
+					function(e){e.preventDefault();change_subject('t-shirt')});
+				document.getElementById("nav_codeofcon").addEventListener("click",
+					function(e){e.preventDefault();change_subject('code')});
 			}
 			/* Since firefox, safari and edge seems to be missing cool new html5 semantics */
 			function __populate(source, elements, element_type, replace) {
@@ -435,12 +451,12 @@
 			</table>
 		</div>
 		<div class="main">
-			<a id="nav_current" class="links">current</a>
-			<a id="nav_about" class="links">about</a>
-			<a id="nav_crew" class="links">crew</a>
-			<a id="nav_past" class="links">past events</a>
-			<a id="nav_tshirts" class="links">t-shirts</a>
-			<a id="nav_codeofcon" class="links">code of conduct</a>
+			<a id="nav_current" class="links" href="?page=current">current</a>
+			<a id="nav_about" class="links" href="?page=about">about</a>
+			<a id="nav_crew" class="links" href="?page=crew">crew</a>
+			<a id="nav_past" class="links" href="?page=past">past events</a>
+			<a id="nav_tshirts" class="links" href="?page=t-shirt">t-shirts</a>
+			<a id="nav_codeofcon" class="links" href="?page=code">code of conduct</a>
 			<div id="content">
 			</div>
 		<br/>
@@ -451,7 +467,7 @@
 						<td style="font-size: 18pt;" rowspan="0">L</td>
 						<td>UND</td>
  						<td style="font-size: 18pt;" rowspan="0">L</td>
-						<td>INUX</td>
+						<td>INUX</t href="?page=cod"d>
 						<td style="font-size: 18pt;" rowspan="0">C</td>
 						<td>ON</td>
 					</tr>
@@ -467,20 +483,20 @@
 		</div>
 		<div class="storage">
 			<div id="current">
-				<h1>The world might still be declared as volatile, but we're back! Mark 12-13 of May in your calendars!</h1>
-				<h1>If you have talks or comments, please contact us!</h1>
-
-				<p>So take two, I do realise that the first version of the changes wasn't that great... but also, doing quick changes between all the other things that should be done.... Is... not helping... creatively ;)</p>
-
+				<!-- <h1>The world might still be declared as volatile, but we're back! Mark 12-13 of May in your calendars!</h1> -->
+				<!-- <h1>If you have talks or comments, please contact us!</h1> -->
+				<h1>Thanks for coming to the 2022 edition of LLC!</h1>
+				<h4>Relive the conference again on <a alt="Video playlist" href="https://www.youtube.com/playlist?list=PLTIKt9flsc089GmCeR10mJLhqHbSC6mpi">youtube</a></h4>
+				<a href="images/llc-2022-large.jpg"><img width="595" height="150" src="images/llc-2022-small.jpg"/></a>
+,
 				<p style="text-align: center;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get an invitation!</p>
 				<p style="text-align: center;">All we ask for is that you have some interest in the Linux kernel from a technical perspective.</p>
-				<p style="text-align: center;">If you would like to join the conference, please use <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpM9zRzi1mOEHMRb1aJghpH9zppQ-zvvLdYrno9MRm8Pvv_A/viewform">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly</p> 
+				<p style="text-align: center;">If you would like to join the conference, please use <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpM9zRzi1mOEHMRb1aJghpH9zppQ-zvvLdYrno9MRm8Pvv_A/viewform">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly</p>
 				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
-
-				<table>
+				<!-- <table>
 					<tr>
 						<td class="divide">
-							<h2>LLC 2019 has come and gone, we had fun and we hope you did as well!</h2>
+							<h2>LLC 2022 is coming up quickly! Hoping to see you.... here! :)</h2>
 							<a href="https://photos.app.goo.gl/Sg8kPbPid7Gu5k45A">
 								<img src="" data-src="images/llc-2019-animated.webp" width="806" height="206" alt="People at LLC 2019">
 							</a>
@@ -488,22 +504,34 @@
 						</td>
 					</tr>
 				</table>
-				<!-- <table>
+				<h1>LLC 2022 is coming up quickly! Hoping to see you.... here! :)</h1>
+				<h2>Here's the program</h2>
+				<table>
 					<tr>
-						<th>time</th>
-						<th>presenter</th>
-						<th>presentation</th>
+						<td class="divide" colspan=3>
+							<h2>2022 -- Are we here yet?</h2>
+							<h3>Day one - 2022-05-12</h3>
+						</td>
 					</tr>
 					<tr>
-						<td colspan=2>8:30</td>
-						<td>The doors are open. Come and grab a cup of coffee and your name tag!</td>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+
+
+					<tr>
+						<td class="divide" colspan=3>
+							<h3>Day two - 2022-05-13</h3>
+						</td>
 					</tr>
 					<tr>
-						<td>9:00</td>
-						<td><a onclick="change_subject('crew')">the crew</a></td>
-						<td>Introduction</td>
+						<th>Presenter</th>
+						<th>Presentation</th>
 					</tr>
-				</table> -->
+
+				</table>
+				-->
+
 			</div>
 			<div id="crew">
 				<h3 class="crew"><span class="pres">Frey Alfredsson</span> - <span class="org">kau</span></h3>
@@ -542,6 +570,94 @@
 				<p>Not here yet, but check out the current page, linked above</p>
 				<br/> -->
 				<table>
+					<tr>
+						<td class="divide" colspan=3>
+							<h2>2022 -- Are we here yet?</h2>
+							<h3>Day one - 2022-05-12</h3>
+							<h5><a alt="Video playlist" href="https://www.youtube.com/playlist?list=PLTIKt9flsc089GmCeR10mJLhqHbSC6mpi">Youtube playlist</a></h5>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td><span class="pres">Abel Vesa</span></td>
+						<td><a href="https://www.youtube.com/watch?v=55rEyDBhjdQ"></a><a href="https://drive.google.com/file/d/1Yqb1EhWuePaCzzQYn43ElkJea5PhnKfj/view?usp=sharing">Interconnect and Devfreq on i.MX - Bus Dynamic Frequency Scaling</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Damien Le Moal</span></td>
+						<td><a href="https://www.youtube.com/watch?v=MRDVk5W8BaU"></a><a href="https://drive.google.com/file/d/1I6ChFc0h4JY9qZdO1bY5oCAdYCSZVqWw/view?usp=sharing">Be On Time: Command Duration Limits Feature Support in Linux</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Johannes Thumshirn</span></td>
+						<td><a href="https://www.youtube.com/watch?v=gLQqbpoSCy8"></a><a href="https://docs.google.com/presentation/d/1Wj-tn7Ddr0IBDidD5dPcx4IFHwRUmOGu/edit?usp=sharing&ouid=110698868656495230656&rtpof=true&sd=true">BTRFS declustered parity RAID for zoned devices</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Brian "bex" Exelbierd</span></td>
+						<td><a href="https://www.youtube.com/watch?v=mk1_uLIxQ_o"></a><a href="https://drive.google.com/file/d/1F4wSMPZp8G01KxDLpoKC388G17thizRw/view?usp=sharing">The CentOS Project Changes (and now it’s better for production kernel changes)</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Ricardo Ribalda</span></td>
+						<td><a href="https://www.youtube.com/watch?v=oIFU2sXz7Jo"></a>Chrome OS</td>
+					</tr>
+					<tr>
+						<td><span class="pres">Andreas Hindborg</span></td>
+						<td><a href="https://www.youtube.com/watch?v=ubohmQSTeBY"></a><a href="https://drive.google.com/file/d/1o7DpttR2jpAfulvcmZ58xnzbONgzszsB/view?usp=sharing">Rust in the kernel</a></td>
+					</tr>
+
+					<tr>
+						<td class="divide" colspan=3>
+							<h3>Day two - 2022-05-13</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>Presenter</th>
+						<th>Presentation</th>
+					</tr>
+					<tr>
+						<td><span class="pres">Jesper Dangaard Brouer</span></td>
+						<td><a href="https://www.youtube.com/watch?v=v2pvGsTNyJI"></a><a href="https://drive.google.com/file/d/1uHS59ejLTS7CYmDbzjiYGJP11JkZ9tlG/view?usp=sharing">XDP-hints via BPF Type Format (BTF) system</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Frey Alfredsson</span></td>
+						<td><a href="https://www.youtube.com/watch?v=tthG9LP5GFk"></a><a href="https://drive.google.com/file/d/1f5WIdBbwFdMIXwNS-btfjnRvGWEoO2Rw/view?usp=sharing">Bringing packet queueing to XDP</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Toke Høiland-Jørgensen</span></td>
+						<td><a href="https://www.youtube.com/watch?v=sPscuO9Ldh8"></a><a href="https://drive.google.com/file/d/1e7JWfHt2GKucZ8YZaQhXN3ehHcoNxOT6/view?usp=sharing">Lightning talk  XDP and BPF_PROG_RUN + XDP Q&amp;A / discussion</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Mikael Hedegren</span>, <span class="pres">Robert Storlind</span></td>
+						<td><a href="https://www.youtube.com/watch?v=lm95kmyLW48"></a><a href="https://drive.google.com/file/d/1xwLtQBjBEeIKBADkmZZy61Odcq8aroXW/view?usp=sharing">Linux on your e-bike</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Andreas Elvstam, Samir Jasarevic</span></td>
+						<td><a href="https://www.youtube.com/watch?v=USSjoBKluNo"></a><a href="https://drive.google.com/file/d/1Aq3EHQMlKDYWEBqu_uOGZa2xKpzaj3GZ/view?usp=sharing">AppArmor: Enhancing Linux security by application hardening</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Philipp Ahmann</span></td>
+						<td><a href="https://www.youtube.com/watch?v=vmQUmqU42ac"></a><a href="https://drive.google.com/file/d/1qEn5oJbqAG7A4c_AWuxOo0ApKEAIHVGc/view?usp=sharing">ELISA and Apertis</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Alistair Francis</span></td>
+						<td><a href="https://www.youtube.com/watch?v=EMlNfC-wHBk"></a><a href="https://drive.google.com/file/d/1bCdTXHU0M1rSc_r46R46uyUYBgFcBs60/view?usp=sharing">Free RISC-V Systems: Benefits and Status of QEMU</a></td>
+					</tr>
+					<tr>
+						<td><span class="pres">Joakim Nordell</span></td>
+						<td><a href="https://www.youtube.com/watch?v=5rlYz78zLM8"></a><a href="https://drive.google.com/file/d/1K3zCcbAubotegq9B96Ivnhsmc8W26Qfq/view?usp=sharing">What makes a device secure, robust and maybe even military graded?</a></td>
+					</tr>
+
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2021 -- Noo... It's still here... :(</h2>
+						</td>
+					</tr>
+					<tr>
+						<td class="divide" colspan=2>
+							<h2>2020 -- What happened?!</h2>
+						</td>
+					</tr>
                                         <tr>
                                                 <td class="divide" colspan=2>
                                                         <h2>2019 -- Lion? Lyon?</h2>
@@ -554,23 +670,23 @@
 						<th>Presentation</th>
 					</tr>
 					<tr>
-						<td>Toke Høiland-Jørgensen</td>
+						<td><span class="pres">Toke Høiland-Jørgensen</span></td>
 						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxMHM2ci16THZ5cEpFSGNsaG80YVlyVUx4c3I0/view?usp=sharing&resourcekey=0-wvn6N5RSmytxyJTMykPnag">Overview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</a></td>
 					</tr>
 					<tr>
-						<td>Uladzislau Rezki</td>
+						<td><span class="pres">Uladzislau Rezki</span></td>
 						<td><a href="https://drive.google.com/file/d/1u_z7HCFPTavP-3wW7OYGe-WlRUD-FaP1/view?usp=sharing">Improving KVA/VMAP allocator in Linux kernel</a> (merged in 5.2)</td>
 					</tr>
 					<tr>
-						<td>Matthias Brugger</td>
+						<td><span class="pres">Matthias Brugger</span></td>
 						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxTU5lZzdfTllwYWFEU2h3S2I5RWNHV2xseHhN/view?usp=sharing&resourcekey=0-Z4mBV5qQ2AttyFPagVqirw">kdump/kexec internals</a></td>
 					</tr>
 					<tr>
-						<td>Andy Polyakov</td>
+						<td><span class="pres">Andy Polyakov</span></td>
 						<td>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</td>
 					</tr>
 					<tr>
-						<td>Thomas Gleixner</td>
+						<td><span class="pres">Thomas Gleixner</span></td>
 						<td>Mopping up kernel messes one at a time, this time: licensing</td>
 					</tr>
                                         <tr>
@@ -583,28 +699,26 @@
 						<th>Presentation</th>
 					</tr>
 					<tr>
-						<td>Jesper Dangaard Brouer</td>
+						<td><span class="pres">Jesper Dangaard Brouer</span></td>
 						<td>XDP As a building block for other FOSS projects</td>
 					</tr>
 					<tr>
-						<td>
-							<span class="pres">Javier González</span>
-						</td>
+						<td><span class="pres">Javier González</span></td>
 						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeEFhUDhTWms5M3Aza2ZqRzZGVHh0TFZIYmE4/view?usp=sharing&resourcekey=0-wFmayMYNiqfWwEbrWrLR8Q">XDSP: eXpress Data Storage Path</a></td>
 					<tr>
-						<td>Klaus Jensen</td>
+						<td><span class="pres">Klaus Jensen</span></td>
 						<td><a href="https://drive.google.com/file/d/1K5vLnUhj9BdoBzXiV0hrHlZtqEXSGIgQ/view?usp=sharing">Binary Index and Journal Embedding in The Linear Tape File System</a></td>
 					</tr>
 					<tr>
-						<td>Daniel Baluta</td>
+						<td><span class="pres">Daniel Baluta</span></td>
 						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxQ3pzWmcxOWs5OE1TZ29ITGJ6NDlXVGYwTXpB">Sound Open Firmware with a focus on i.MX integration</a></td>
 					</tr>
 					<tr>
-						<td>Damien Le Moal</td>
+						<td><span class="pres">Damien Le Moal</span></td>
 						<td>RISC-V</td>
 					</tr>
 					<tr>
-						<td>Matias Bjørling</td>
+						<td><span class="pres">Matias Bjørling</span></td>
 						<td>ZNS - Zoned Namespaces</td>
 					</tr>
 					<tr>
@@ -1172,7 +1286,7 @@
 				<p>You can make a report either personally or anonymously.</p>
 
 				<h4>Anonymous Report</h4>
-				<p>You can make an anonymous report <a href="https://goo.gl/forms/EYmdtNA4sgpBelNN2">here</a>.</p>
+				<p>You can make an anonymous report <a alt="link to form for making an anonymous report" href="https://goo.gl/forms/EYmdtNA4sgpBelNN2">using this form</a>.</p>
 
 				<p>We can't follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.</p>
 
