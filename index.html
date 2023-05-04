@@ -150,7 +150,22 @@
 				position: relative;
 				top: -1.2em;
 				-webkit-text-fill-color: #aa0000;
-				-webkit-text-stroke-width: 0pt
+				-webkit-text-stroke-width: 0pt;
+			}
+			.sched_break {
+				background-color: #9a7d0a;
+			}
+			.sched_talk {
+				background-color: #1e8449;
+			}
+			.sched_other {
+				background-color: #2874a6;
+			}
+			.sched_this {
+				border-color: red;
+			}
+			.sched_next {
+				border-color: orange;
 			}
 			a[href*="youtube.com"] {
 				padding-left: 25pt;
@@ -447,7 +462,11 @@
 					<td class="logo_large" rowspan="0">C</td>
 					<td>ON</td>
 				</tr>
-				<tr><td colspan=2></td><td class="logo_small">May 12-13</td><td class="logo_small">2022</td></tr>
+				<tr>
+					<td class="logo_small" colspan=2 style="text-align:left;">solum ad iocor</td>
+					<td class="logo_small">May 25-26</td>
+					<td class="logo_small">2023</td>
+				</tr>
 			</table>
 		</div>
 		<div class="main">
@@ -459,7 +478,7 @@
 			<a id="nav_codeofcon" class="links" href="?page=code">code of conduct</a>
 			<div id="content">
 			</div>
-		<br/>
+			<br/>
 			<p class="center" style="display: inline-table;">
 				<div style="display: inline-table;vertical-align: top;padding-top: 1em;">follow</div>
 				<table class="follow_logo" style="padding: 0; margin: 0; font-size: 10pt;" width="137px">
@@ -483,54 +502,195 @@
 		</div>
 		<div class="storage">
 			<div id="current">
-				<!-- <h1>The world might still be declared as volatile, but we're back! Mark 12-13 of May in your calendars!</h1> -->
-				<!-- <h1>If you have talks or comments, please contact us!</h1> -->
-				<h1>Thanks for coming to the 2022 edition of LLC!</h1>
-				<h4>Relive the conference again on <a alt="Video playlist" href="https://www.youtube.com/playlist?list=PLTIKt9flsc089GmCeR10mJLhqHbSC6mpi">youtube</a></h4>
-				<a href="images/llc-2022-large.jpg"><img width="595" height="150" src="images/llc-2022-small.jpg"/></a>
-,
+				<!-- <h1>Thanks for coming to the 2022 edition of LLC!</h1>
+				<h4>Relive the conference again on <a alt="Video playlist" href="https://www.youtube.com/playlist?list=PLTIKt9flsc089GmCeR10mJLhqHbSC6mpi">youtube</a></h4> -->
 				<p style="text-align: center;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get an invitation!</p>
 				<p style="text-align: center;">All we ask for is that you have some interest in the Linux kernel from a technical perspective.</p>
 				<p style="text-align: center;">If you would like to join the conference, please use <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpM9zRzi1mOEHMRb1aJghpH9zppQ-zvvLdYrno9MRm8Pvv_A/viewform">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link back shortly</p>
+				<a href="images/llc-2022-large.jpg"><img width="595" height="150" src="images/llc-2022-small.jpg"/></a>
 				<!-- <h5>For LLC 2017, please do so before April 17th.</h5> -->
 				<!-- <table>
 					<tr>
 						<td class="divide">
-							<h2>LLC 2022 is coming up quickly! Hoping to see you.... here! :)</h2>
+							<h2>LLC 2023 is coming up quickly! Hoping to see you.... here! :)</h2>
 							<a href="https://photos.app.goo.gl/Sg8kPbPid7Gu5k45A">
 								<img src="" data-src="images/llc-2019-animated.webp" width="806" height="206" alt="People at LLC 2019">
 							</a>
 							<p>(sorry, using webp since it's ~300KB while gif was 1.2MB)</p>
 						</td>
 					</tr>
-				</table>
-				<h1>LLC 2022 is coming up quickly! Hoping to see you.... here! :)</h1>
+				</table> -->
+				<h1>LLC 2023 is coming up quickly! Hoping to see you.... here! :)</h1>
 				<h2>Here's the program</h2>
 				<table>
 					<tr>
 						<td class="divide" colspan=3>
-							<h2>2022 -- Are we here yet?</h2>
-							<h3>Day one - 2022-05-12</h3>
+							<h2>2023 -- What does this button do?</h2>
+							<h3>Day one - 2023-05-25</h3>
 						</td>
 					</tr>
 					<tr>
+						<th>Time</th>
 						<th>Presenter</th>
 						<th>Presentation</th>
 					</tr>
-
-
+					<tr class="sched_other">
+						<td>9:00</td>
+						<td colspan="2">The doors are open. Come and grab a cup of coffee and your name tag!</td>
+					</tr>
+					<tr class="sched_other">
+						<td>9:30</td>
+						<td>The Organizers</td>
+						<td>Introduction</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>9:45</td>
+						<td><span class="pres">Björn Töpel</span></td>
+						<td>The RISC-V Linux port; past/current/next</td>
+					</tr>
+					<tr class="sched_break">
+						<td>10:30</td>
+						<td colspan="2">Break</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>10:45</td>
+						<td><span class="pres">Kevin Brodsky</span></td>
+						<td>One giant leap for security: leveraging capabilities in Linux</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>11:30</td>
+						<td><span class="pres">Vitaly Wool</span></td>
+						<td>Implementing secure boot for AOSP running U-Boot</td>
+					</tr>
+					<tr class="sched_break">
+						<td>12:15</td>
+						<td colspan="2">Photos and Lunch</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>13:30</td>
+						<td><span class="pres">Jørgen Hansen</span></td>
+						<td>Experiences with CXL on Linux</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>14:15</td>
+						<td><span class="pres">Yiannis Nikolakopoulos</span></td>
+						<td>ZeroPoint hardware accelerated memory compression in Linux</td>
+					</tr>
+					<tr class="sched_break">
+						<td>15:00</td>
+						<td colspan="2">Break</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>15:30</td>
+						<td><span class="pres">Andreas Hindborg</span></td>
+						<td>Supporting zoned storage in Ublk</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>16:00</td>
+						<td><span class="pres">Dennis Maisenbacher</span></td>
+						<td>Zoned storage in the cloud</td>
+					</tr>
+					<tr class="sched_other">
+						<td>16:30</td>
+						<td colspan="2">Lightning talks</td>
+					</tr>
+					<tr class="sched_other">
+						<td>-</td>
+						<td><span class="pres">Joakim Norell</span></td>
+						<td>Industrial espionage is not for fun</td>
+					</tr>
+					<tr class="sched_other">
+						<td>-</td>
+						<td><span class="pres">Hans Holmberg</span></td>
+						<td>The year of the Linux handheld</td>
+					</tr>
+					<tr class="sched_other">
+						<td colspan="3" align=center>...</td>
+					</tr>
+					<tr class="sched_other">
+						<td>~18:00-~21:00</td>
+						<td colspan="2">Social activity - dinner</td>
+					</tr>
 					<tr>
 						<td class="divide" colspan=3>
-							<h3>Day two - 2022-05-13</h3>
+							<h3>Day two - 2023-05-26</h3>
 						</td>
 					</tr>
 					<tr>
+						<th>Time</th>
 						<th>Presenter</th>
 						<th>Presentation</th>
 					</tr>
-
+					<tr class="sched_other">
+						<td>8:30</td>
+						<td colspan="2">The doors are open, come grab a cup of coffee.</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>9:00</td>
+						<td><span class="pres">Linus Walleij</span></td>
+						<td>Rust: Abstraction and Productivity</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>9:30</td>
+						<td><span class="pres">Andreas Hindborg</span></td>
+						<td>A null_blk Linux kernel driver in Rust</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>10:00</td>
+						<td><span class="pres">Krister Walfridsson</span></td>
+						<td>Verifying the absence of buffer overflows and other undefined behavior in C</td>
+					</tr>
+					<tr class="sched_break">
+						<td>10:30</td>
+						<td colspan="2">Break</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>10:45</td>
+						<td><span class="pres">Daniel Krippner</span></td>
+						<td>What is a software-defined vehicle - OSS vs Safety</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>11:15</td>
+						<td><span class="pres">Robert Fekete</span></td>
+						<td>Linux and Safety</td>
+					</tr>
+					<tr class="sched_other">
+						<td>11:45</td>
+						<td colspan="2">Discussion: Linux in cars</td>
+					</tr>
+					<tr class="sched_break">
+						<td>12:15</td>
+						<td colspan="2">Lunch</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>13:30</td>
+						<td><span class="pres">Julia Lawall</span></td>
+						<td>Graphing tools for scheduler tracing</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>14:15</td>
+						<td><span class="pres">Anders Roxell</span></td>
+						<td>Reproducible cross-compilation and cross-testing made easy</td>
+					</tr>
+					<tr class="sched_break">
+						<td>15:00</td>
+						<td colspan="2">Break</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>15:30</td>
+						<td><span class="pres">Karl Roos</span></td>
+						<td>A next generartion DPU based on OpenWRT</td>
+					</tr>
+					<tr class="sched_talk">
+						<td>16:15</td>
+						<td><span class="pres">Ricardo Ribalda</span></td>
+						<td>Kcam, another way of accessing the cameras from Linux</td>
+					</tr>
+					<tr class="sched_other">
+						<td>17:00-18:00</td>
+						<td colspan="2">Finishing up, snacks and drinks</td>
+					</tr>
 				</table>
-				-->
 
 			</div>
 			<div id="crew">
@@ -599,7 +759,7 @@
 					</tr>
 					<tr>
 						<td><span class="pres">Ricardo Ribalda</span></td>
-						<td><a href="https://www.youtube.com/watch?v=oIFU2sXz7Jo"></a>Chrome OS</td>
+						<td><a href="https://www.youtube.com/watch?v=oIFU2sXz7Jo"></a><a href="https://drive.google.com/file/d/1OdgGzd13sIdABCszjrn2mJQxjh58oIac/view?usp=share_link">Chrome OS</a></td>
 					</tr>
 					<tr>
 						<td><span class="pres">Andreas Hindborg</span></td>
