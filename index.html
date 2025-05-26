@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
+		<link rel="preload" href="/fonts/Benguiat.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/fonts/Benguiat.woff" as="font" type="font/woff" crossorigin>
 		<title>lundlinuxcon.org - A small linux conference in Lund</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -342,14 +344,6 @@
 				}
 			}
 
-			function lazy_load(data) {
-				images = data.getElementsByTagName('img');
-				for (index = 0; index < images.length; ++index) {
-					if (images[index].getAttribute('src') == "")
-						images[index].src = images[index].getAttribute("data-src");
-				}
-			}
-
 			function change_subject(subject) {
 				if (subject == undefined && 
 						(subject = get_var('page')) == undefined) {
@@ -358,7 +352,6 @@
 				history.replaceState(null, null, location.pathname + '?page=' + subject);
 				item = document.getElementById("content");
 				data = document.getElementById(subject);
-				lazy_load(data);
 				item.replaceChild(data.cloneNode(true), item.firstChild);
 				//register_egg();
 			}
@@ -1515,49 +1508,49 @@
 						<td><h2>LLC 2023 - sponsored by <a href="https://www.volvocars.com/">Volvo Cars</a></h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2023.svg" width="800" height="300" alt="T-Shirt design for LLC 2023"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2023.svg" width="800" height="300" alt="T-Shirt design for LLC 2023"></td>
 					</tr>
 					<tr>
 						<td><h2>LLC 2022 - sponsored by <a href="https://www.volvocars.com/">Volvo Cars</a></h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2022.svg" width="800" height="300" alt="T-Shirt design for LLC 2022"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2022.svg" width="800" height="300" alt="T-Shirt design for LLC 2022"></td>
 					</tr>
 					<tr>
 						<td><h2>LLC 2019 - sponsored by <a href="https://www.linaro.com/">Linaro</a></h2></td>
 					<tr>
 					</tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2019.svg" width="800" height="300" alt="T-Shirt design for LLC 2018"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2019.svg" width="800" height="300" alt="T-Shirt design for LLC 2018"></td>
 					</tr>
 
 					<tr>
 						<td><h2>LLC 2018 - sponsored by <a href="https://www.cnexlabs.com/">cnexlabs</a></h2></td>
 					<tr>
 					</tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2018.svg" width="800" height="300" alt="T-Shirt design for LLC 2018"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2018.svg" width="800" height="300" alt="T-Shirt design for LLC 2018"></td>
 					</tr>
 					<tr>
 						<td><h2>LLC 2017 - sponsored by <a href="http://viendi.se/">viendi</a></h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2017.svg" width="800" height="300" alt="T-Shirt design for LLC 2017"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2017.svg" width="800" height="300" alt="T-Shirt design for LLC 2017"></td>
 					<tr>
 						<td><h2>LLC 2016 - sponsored by <a href="https://www.fingerprints.com/">fingerprints</a></h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2016.svg" width="800" height="300" alt="T-Shirt design for LLC 2016"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2016.svg" width="800" height="300" alt="T-Shirt design for LLC 2016"></td>
 					</tr>
 					<tr>
 						<td><h2>LLC 2015 - sponsored by <a href="https://axis.com</a>/">Axis</a></h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-shirt-2015.svg" width="800" height="300" alt="T-Shirt design for LLC 2015"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-shirt-2015.svg" width="800" height="300" alt="T-Shirt design for LLC 2015"></td>
 					</tr>
 					<tr>
 						<td><h2>LLC 2014 - sponsored by Hans</h2></td>
 					</tr>
 					<tr>
-						<td><img src="" data-src="images/t-shirts/llc-t-shirt-2014.png" width="450" height="363" alt="T-Shirt design for LLC 2014"></td>
+						<td><img loading="lazy" src="images/t-shirts/llc-t-shirt-2014.png" width="450" height="363" alt="T-Shirt design for LLC 2014"></td>
 					</tr>
 				</table>
 
