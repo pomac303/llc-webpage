@@ -53,15 +53,7 @@
 			a:hover {
 				text-decoration: underline;
 			}
-
-			div.logo_cont {
-				width: 844px;
-				height: 165px;
-				margin-top: 5em;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.center, p.crew, img.logo, div.main {
+			.center, p.crew, div.main {
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
@@ -126,37 +118,6 @@
 				font-display: swap;
 
 			}
-			.logo_large, .logo, .logo_small {
-				font-family: Benguiat;
-				padding: 0;
-				margin: 0;
-				text-shadow: 0 0 20pt #ff0000;
-				text-align: center;
-			}
-			.logo_large, .logo {
-				-webkit-text-fill-color: black;
-				-webkit-text-stroke-width: 1pt;
-				-webkit-text-stroke-color: red;
-			}
-			.logo_large {
-				font-size: 128pt;
-			}
-			.logo {
-				table-layout: auto;
-				font-size: 64pt;
-			}
-			.logo_small {
-				align: center;
-				font-size: 20pt;
-				color: #aa0000;
-				font-variant: small-caps;
-				position: relative;
-				top: -1.2em;
-				/* workaround layout issue with firefox */
-				white-space: nowrap;
-				-webkit-text-fill-color: #aa0000;
-				-webkit-text-stroke-width: 0pt;
-			}
 			.sched_break {
 				background-color: #9a7d0a;
 			}
@@ -172,6 +133,62 @@
 			.sched_next {
 				border-color: orange;
 			}
+			.logo_cont {
+				margin-top: 90pt;
+                                margin-left: auto;
+                                margin-right: auto;
+				width: 844px;
+				height: 165px;
+				display: grid;
+				font-size: 64pt;
+				font-family: Benguiat;
+                                text-align: center;
+				padding: 0;
+				grid-template-areas:
+					'logo1 logo2 logo3 logo4 logo5 logo6'
+					'logo1 logo7 logo3 logo8 logo5 logo9';
+			}
+			.logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9 {
+                                text-shadow: 0 0 20pt #ff0000;
+				margin: 0;
+				padding: 0;
+			}
+			.logo1, .logo2, .logo3, .logo4, .logo5, .logo6 {
+                                -webkit-text-fill-color: black;
+                                -webkit-text-stroke-width: 1pt;
+                                -webkit-text-stroke-color: red;
+                        }
+			.logo1, .logo3, .logo5 {
+                                font-size: 128pt;
+                        }
+			.logo7, .logo8, .logo9 {
+                                align: center;
+                                font-size: 20pt;
+                                color: #aa0000;
+                                font-variant: small-caps;
+                                position: relative;
+                                top: -1em;
+                                /* workaround layout issue with firefox */
+                                white-space: nowrap;
+                                -webkit-text-fill-color: #aa0000;
+                                -webkit-text-stroke-width: 0pt;
+                        }
+			.logo2, .logo4, .logo6 {
+				margin-top: 0.23em;
+			}
+			.logo1, .logo3, .logo5 {
+				grid-row: 1 / span 2;
+			}
+			.logo1 { grid-area: logo1; }
+			.logo2 { grid-area: logo2; }
+			.logo3 { grid-area: logo3; }
+			.logo4 { grid-area: logo4; }
+			.logo5 { grid-area: logo5; }
+			.logo6 { grid-area: logo6; }
+			.logo7 { grid-area: logo7; }
+			.logo8 { grid-area: logo8; }
+			.logo9 { grid-area: logo9; }
+
 			a[href*="youtube.com"], a[href*="youtu.be"] {
 				padding-left: 25pt;
 				width: 25pt;
@@ -450,22 +467,17 @@
 			document.getElementsByTagName('body')[0].onpageshow = function() {change_subject(); populate()};
 		</script>
 		<div class="logo_cont">
-			<table class="logo" style="padding: 0; margin: 0;">
-				<tr>
-					<td class="logo_large" rowspan="0">L</td>
-					<td>UND</td>
-					<td class="logo_large" rowspan="0">L</td>
-					<td>INUX</td>
-					<td class="logo_large" rowspan="0">C</td>
-					<td>ON</td>
-				</tr>
-				<tr>
-					<td class="logo_small">solum ad iocor</td>
-					<td class="logo_small">May 27-28</td>
-					<td class="logo_small">2025</td>
-				</tr>
-			</table>
+			<div class="logo1">L</div>
+			<div class="logo2">UND</div>
+			<div class="logo3">L</div>
+			<div class="logo4">INUX</div>
+			<div class="logo5">C</div>
+			<div class="logo6">ON</div>
+			<div class="logo7">solum ad iocor</div>
+			<div class="logo8">May 27-28</div>
+			<div class="logo9">2025</div>
 		</div>
+
 		<div class="main">
 			<a id="nav_current" class="links" href="?page=current">current</a>
 			<a id="nav_about" class="links" href="?page=about">about</a>
