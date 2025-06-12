@@ -133,6 +133,10 @@
 			.sched_next {
 				border-color: orange;
 			}
+			.grid2 {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+			}
 			.logo_cont {
 				margin-top: 90pt;
                                 margin-left: auto;
@@ -368,15 +372,12 @@
 				item = document.getElementById("content");
 				data = document.getElementById(subject);
 				item.replaceChild(data.cloneNode(true), item.firstChild);
-				//register_egg();
 			}
-			//document.addEventListener("onpageshow", function(){change_subject(); populate()});
 
 			/* Companies/orgnaisations */
 			var organisations = {
 				arm: {			title: "ARM",			url: "https://www.arm.com/"			},
 				axis: {			title: "Axis",			url: "https://www.axis.com/"			},
-				//canonical: {		title: "Canonical",		url: "https://www.canonical.com/"		},
 				cnexlabs: {		title: "CNEX Labs",		url: "https://www.cnexlabs.com/"		},
 				ericsson: {		title: "Ericsson",		url: "https://www.ericsson.com/"		},
 				intel_otc: {		title: "intel",			url: "https://01.org/"				},
@@ -395,7 +396,6 @@
 				'Gunnar Andersson': {		url: "https://www.genivi.org/"				},
 				'Javier González': {		url: "https://javigon.com/"				},
 				'Joakim Bech': {		url: "http://joakimbech.com/"				},
-			//	'Johan Hovold': {		url: "" 		},
 				'Hans Holmberg': {		url: "https://www.owltronix.com/"			},
 				'Ian Kumlien': {		url: "https://pomac303.blogspot.com/"			},
 				'Linus Walleij': {		url: "https://dflund.se/~triad/"			},
@@ -447,22 +447,6 @@
 				populate_buttons();
 				populate_organisations();
 				populate_presenters();
-			}
-
-			function register_egg() {
-				element = document.getElementById("because");
-				element.addEventListener("mouseover", egg_over);
-				element.addEventListener("mouseout", egg_out);
-			}
-			function egg_over() {
-				element = document.getElementById("because");
-				if (element)
-					element.src = "images/llc-2018-ian.jpg";
-			}
-			function egg_out() {
-				element = document.getElementById("because");
-				if (element)
-					element.src = element.getAttribute("data-src");
 			}
 			document.getElementsByTagName('body')[0].onpageshow = function() {change_subject(); populate()};
 		</script>
@@ -826,9 +810,6 @@
 						<th>Presentation</th>
 					</tr>
 					<tr>
-						<td colspan="2">The doors are open, bring your badge.</td>
-					</tr>
-					<tr>
 						<td><span class="pres">Julia Lawall</span></td>
 						<td><a href="https://www.youtube.com/watch?v=n1Wqz1pQsY0"></a><a href="https://drive.google.com/file/d/1EWDPz9vUZF7qjk-f8fCP7lUMu4iSfstz/view?usp=sharing">Should we balance? An adventure with formal verification of Linux kernel code</a></td>
 					</tr>
@@ -1114,7 +1095,6 @@
 					<tr>
 						<td class="divide" colspan=3>
 							<h2>2018 - Ouroboros-Unicorn edition</h2>
-							<!-- <h4>The official <a href="">program</a></h4> -->
 							<h3>Day one - 2018-05-03</h3>
 						</td>
 					</tr>
@@ -1178,7 +1158,6 @@
 					<tr>
 						<td class="divide" colspan=2>
 							<h2>2017 - Mucha edition</h2>
-							<h4>The official <a href="https://drive.google.com/file/d/0BybszUG3ewMxd1RrM213OE9LM1oxT3Z0Vm1McE00WHVqS3A0/view?usp=sharing&resourcekey=0-Yk5dyODNN3GZpD3DzyiY-g">program</a></h4>
 							<h3>Day one - 2017-05-04</h3>
 						</td>
 					</tr>
@@ -1281,7 +1260,6 @@
 					<tr>
 						<td class="divide" colspan=2>
 							<h2>2016 - Beerlin edition</h2>
-							<h4>The official <a href="https://docs.google.com/document/d/15KqC-Agz6q4mxxA2EHM1WOd35rgP2pL3qDHkjjSg-lU/edit?usp=sharing">program</a></h4>
 							<h3>Day one - 2016-05-12</h3>
 						</td>
 					<tr>
@@ -1407,7 +1385,6 @@
 					<tr>
 						<td class="divide" colspan=2>
 							<h2>2015 - Leprechaun edition</h2>
-							<h4>The official <a href="https://drive.google.com/file/d/0BybszUG3ewMxaXdBMkYtNDJhalgtdWpwREhvV052VE0wcmNR/view?usp=sharing&resourcekey=0-CUcOZ9vhxfwE22LjK5wDzA">program</a></h4>
 							<h3>Day one - 2015-05-07</h3>
 						</td>
 					</tr>
