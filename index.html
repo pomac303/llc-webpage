@@ -95,19 +95,6 @@
 			p.crew {
 				margin-top: 0;
 			}
-			.follow_logo {
-				font-family: Benguiat;
-				display: inline-table;
-				padding: 0;
-				margin: 0;
-				width: 100px;
-				text-align: center;
-				table-layout: auto;
-				border-spacing: 0px;
-				color: #aa0000;
-				font-display: swap;
-
-			}
 			.sched_break {
 				background-color: #9a7d0a;
 			}
@@ -135,6 +122,29 @@
 				grid-row: 1 / span 2;
 			}
 			/* logo */
+			.sl_cont {
+				display: inline-grid;
+				font-family: Benguiat;
+				text-align: center;
+				color: #aa0000;
+				grid-template-areas:
+					'sl1 sl2 sl3 sl4 sl5 sl6'
+					'sl1 . sl3 . sl5 .';
+			}
+			.sl2, .sl4, .sl6 {
+				padding-top: 0.2em;
+				font-size: 10pt;
+			}
+			.sl1, .sl3, .sl5 {
+				font-size: 18pt;
+				grid-row: 1 / span 2;
+			}
+			.sl1 { grid-area: sl1; }
+			.sl2 { grid-area: sl2; }
+			.sl3 { grid-area: sl3; }
+			.sl4 { grid-area: sl4; }
+			.sl5 { grid-area: sl5; }
+			.sl6 { grid-area: sl6; }
 			.l_cont {
 				margin-top: 90pt;
 				margin-left: auto;
@@ -470,21 +480,17 @@
 			<div id="content">
 			</div>
 			<br/>
-			<p class="center" style="display: inline-table;">
-				<div style="display: inline-table; vertical-align: top;padding-top: 1em;">follow</div>
-				<table class="follow_logo" style="padding: 0; margin: 0; font-size: 10pt;" width="137px">
-					<tr>
-						<td style="font-size: 18pt;" rowspan="0">L</td>
-						<td>UND</td>
- 						<td style="font-size: 18pt;" rowspan="0">L</td>
-						<td>INUX</td>
-						<td style="font-size: 18pt;" rowspan="0">C</td>
-						<td>ON</td>
-					</tr>
-					<tr><td colspan=2></td></tr>
-				</table>
-				<div style="display: inline-table; vertical-align: top;padding-top:1em;">on</div>
-				<a href="https://www.facebook.com/lundlinuxcon/"><img src="images/flogo_RGB_HEX-72.svg" alt="Facebook page" height="32" width="32" /></a>
+			<p style="display: inline-grid;">
+				follow
+				<div class="sl_cont">
+					<div class="sl1">L</div>
+					<div class="sl2">UND</div>
+					<div class="sl3">L</div>
+					<div class="sl4">INUX</div>
+					<div class="sl5">C</div>
+					<div class="sl6">ON</div>
+				</div>
+				on <a href="https://www.facebook.com/lundlinuxcon/"><img src="images/flogo_RGB_HEX-72.svg" alt="Facebook page" height="32" width="32" /></a>
 			</p>
 
 			<p class="center">
