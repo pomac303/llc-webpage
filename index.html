@@ -59,10 +59,6 @@
 				text-align: center;
 				align-items: center;
 			}
-			.divide {
-				text-align: center;
-				border-bottom: 1pt solid #400000;
-			}
 			div.main {
 				/* Same width as the image */
 				width: 844px;
@@ -91,12 +87,6 @@
 			#content {
 				padding-top: 0;
 				border-top: 1.2pt solid #500000;
-			}
-			table {
-				width: 90%;
-				text-align: left;
-				margin-left: auto;
-				margin-right: auto;
 			}
 			h2.crew, h3.crew {
 				margin-bottom: 0;
@@ -133,50 +123,57 @@
 			.sched_next {
 				border-color: orange;
 			}
-			.grid2 {
+			.g2 {
 				display: grid;
-				grid-template-columns: repeat(2, auto);
+				text-align: left;
+				grid-template-columns: 1fr 2fr;
+			}
+			.g2txt {
+				text-align: center;
+				border-bottom: 1pt solid #400000;
+				grid-column: 1 / span 2;
+				grid-row: 1 / span 2;
 			}
 			.logo_cont {
 				margin-top: 90pt;
-                                margin-left: auto;
-                                margin-right: auto;
+				margin-left: auto;
+				margin-right: auto;
 				width: 844px;
 				height: 165px;
 				display: grid;
 				font-size: 64pt;
 				font-family: Benguiat;
-                                text-align: center;
+				text-align: center;
 				padding: 0;
 				grid-template-areas:
 					'logo1 logo2 logo3 logo4 logo5 logo6'
 					'logo1 logo7 logo3 logo8 logo5 logo9';
 			}
 			.logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9 {
-                                text-shadow: 0 0 20pt #ff0000;
+				text-shadow: 0 0 20pt #ff0000;
 				margin: 0;
 				padding: 0;
 			}
 			.logo1, .logo2, .logo3, .logo4, .logo5, .logo6 {
-                                -webkit-text-fill-color: black;
-                                -webkit-text-stroke-width: 1pt;
-                                -webkit-text-stroke-color: red;
-                        }
+				-webkit-text-fill-color: black;
+				-webkit-text-stroke-width: 1pt;
+				-webkit-text-stroke-color: red;
+			}
 			.logo1, .logo3, .logo5 {
-                                font-size: 128pt;
-                        }
+				font-size: 128pt;
+			}
 			.logo7, .logo8, .logo9 {
-                                align: center;
-                                font-size: 20pt;
-                                color: #aa0000;
-                                font-variant: small-caps;
-                                position: relative;
-                                top: -1em;
-                                /* workaround layout issue with firefox */
-                                white-space: nowrap;
-                                -webkit-text-fill-color: #aa0000;
-                                -webkit-text-stroke-width: 0pt;
-                        }
+				align: center;
+				font-size: 20pt;
+				color: #aa0000;
+				font-variant: small-caps;
+				position: relative;
+				top: -1em;
+				/* workaround layout issue with firefox */
+				white-space: nowrap;
+				-webkit-text-fill-color: #aa0000;
+				-webkit-text-stroke-width: 0pt;
+			}
 			.logo2, .logo4, .logo6 {
 				margin-top: 0.23em;
 			}
@@ -691,873 +688,590 @@
 
 			</div>
 			<div id="past">
-				<br/> <!--
-				<h2>2018</h2>
-				<p>Not here yet, but check out the current page, linked above</p>
-				<br/> -->
-				<table>
-					<tr>
-						<td class="divide" colspan=3>
-							<h2>2025 -- Whoa! there it is!</h2>
-							<h3>Day one - 2025-05-27</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Linus Walleij</span></td>
-						<td><a href="https://www.youtube.com/watch?v=T9Q7HrQwz2I"></a><a href="https://drive.google.com/file/d/1fD5kQ1EIO3eBDgKOtjx6zopP9f0XV1KM/view?usp=sharing">Linux scheduler overview and update</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Kevin Brodsky</span></td>
-						<td><a href="https://www.youtube.com/watch?v=UdaHnAN8cC0"></a>Kernel hardening with protection keys</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Toke Høiland-Jørgensen</span></td>
-						<td><a href="https://www.youtube.com/watch?v=eo_wmclO03k"></a><a href="https://drive.google.com/file/d/1jyCKPEH6ZT2yty90UBiDYo1ufDT83eD9/view?usp=sharing">Honouring the life of Dave Täht</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andreas Hindborg</span></td>
-						<td><a href="https://www.youtube.com/watch?v=6su9sP86d7M"></a>Configfs Rust API: Technical Deep Dive</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Vitaly Vul</span></td>
-						<td><a href="https://www.youtube.com/watch?v=64dGutj_nSY"></a>"Rusty" swapping optimization: profiling a zswap backend written in Rust</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Yiannis Nikolakopoulos</span></td>
-						<td><a href="https://www.youtube.com/watch?v=-8lYKuopIIs"></a><a href="https://drive.google.com/file/d/1SAlURJaU5OxTG2FsO3s2sdl2_ClvkJq7/view?usp=sharing">Towards a compressed memory tier in the Kernel</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day two - 2025-05-28</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Johannes Thumshirn</span></td>
-						<td><a href="https://www.youtube.com/watch?v=w81JXaMjA_k"></a><a href="https://drive.google.com/file/d/162OXGgC3_g13kqBNHleSB3eKNh9UeOYE/view?usp=sharing">BTRFS RAID Stripe Tree, 3 years and 32 patches later</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Bogdan Tanasa</span></td>
-						<td><a href="https://www.youtube.com/watch?v=gFev2uXxHAU"></a><a href="https://docs.google.com/presentation/d/1_kBgO4vcd3G2rqRuz8c0Z7D6CymCU6Wo/edit?usp=sharing&ouid=110698868656495230656&rtpof=true&sd=true">The Intel Processor Tracer</a></td>
-					</tr>
-					<tr>
-						<td><span class="press">Erik Lundh</span></td>
-						<td><a href="https://www.youtube.com/watch?v=_ZAvM6nfW8k"></a>Some odd places to find a Linux kernel - and where those rabbit holes took me</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Robert Clausecker</span></td>
-						<td><a href="https://www.youtube.com/watch?v=kbSFSxHUmN4"></a>SIMD-enhanced libc string functions: how it's done</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Daniel Turull</span></td>
-						<td><a href="https://www.youtube.com/watch?v=YYSzi4dZ_-A"></a><a href="https://drive.google.com/file/d/1pavwNpL26kIllK8Of58fmFTZF_kB2Q6h/view?usp=sharing">Enhancing Embedded Product Security with Yocto Project Tools</a></td>
-					</tr>
-					<tr>
-						<td>Lightning talks</td>
-						<td><span class="pres">Andy Polyakov</span> - <a href="https://www.youtube.com/watch?v=gWQymYB09NA"></a>Kernel as an HPC bottleneck</br>
-							<span class="pres">Ian Kumlien</span> - <a href="https://youtu.be/gWQymYB09NA?t=857"></a>I did a thing</br>
-							<span class="pres">Robert Fekete</span> - <a href="https://youtu.be/gWQymYB09NA?t=1438"></a>ELISA update
-						</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2025 -- Whoa! there it is!</h2>
+						<h3>Day one - 2025-05-27</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://www.youtube.com/watch?v=T9Q7HrQwz2I"></a><a href="https://drive.google.com/file/d/1fD5kQ1EIO3eBDgKOtjx6zopP9f0XV1KM/view?usp=sharing">Linux scheduler overview and update</a></div>
+
+					<div class="pres">Kevin Brodsky</div>
+					<div><a href="https://www.youtube.com/watch?v=UdaHnAN8cC0"></a>Kernel hardening with protection keys</div>
+
+					<div class="pres">Toke Høiland-Jørgensen</div>
+					<div><a href="https://www.youtube.com/watch?v=eo_wmclO03k"></a><a href="https://drive.google.com/file/d/1jyCKPEH6ZT2yty90UBiDYo1ufDT83eD9/view?usp=sharing">Honouring the life of Dave Täht</a></div>
+
+					<div class="pres">Andreas Hindborg</div>
+					<div><a href="https://www.youtube.com/watch?v=6su9sP86d7M"></a>Configfs Rust API: Technical Deep Dive</div>
+
+					<div class="pres">Vitaly Vul</div>
+					<div><a href="https://www.youtube.com/watch?v=64dGutj_nSY"></a>"Rusty" swapping optimization: profiling a zswap backend written in Rust</div>
+
+					<div class="pres">Yiannis Nikolakopoulos</div>
+					<div><a href="https://www.youtube.com/watch?v=-8lYKuopIIs"></a><a href="https://drive.google.com/file/d/1SAlURJaU5OxTG2FsO3s2sdl2_ClvkJq7/view?usp=sharing">Towards a compressed memory tier in the Kernel</a></div>
+
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2025-05-28</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+					
+					<div class="pres">Johannes Thumshirn</div>
+					<div><a href="https://www.youtube.com/watch?v=w81JXaMjA_k"></a><a href="https://drive.google.com/file/d/162OXGgC3_g13kqBNHleSB3eKNh9UeOYE/view?usp=sharing">BTRFS RAID Stripe Tree, 3 years and 32 patches later</a></div>
+
+					<div class="pres">Bogdan Tanasa</div>
+					<div><a href="https://www.youtube.com/watch?v=gFev2uXxHAU"></a><a href="https://docs.google.com/presentation/d/1_kBgO4vcd3G2rqRuz8c0Z7D6CymCU6Wo/edit?usp=sharing&ouid=110698868656495230656&rtpof=true&sd=true">The Intel Processor Tracer</a></div>
+
+					<div class="press">Erik Lundh</div>
+					<div><a href="https://www.youtube.com/watch?v=_ZAvM6nfW8k"></a>Some odd places to find a Linux kernel - and where those rabbit holes took me</div>
+
+					<div class="pres">Robert Clausecker</div>
+					<div><a href="https://www.youtube.com/watch?v=kbSFSxHUmN4"></a>SIMD-enhanced libc string functions: how it's done</div>
+
+					<div class="pres">Daniel Turull</div>
+					<div><a href="https://www.youtube.com/watch?v=YYSzi4dZ_-A"></a><a href="https://drive.google.com/file/d/1pavwNpL26kIllK8Of58fmFTZF_kB2Q6h/view?usp=sharing">Enhancing Embedded Product Security with Yocto Project Tools</a></div>
+
+					<div>Lightning talks:</div>
+					<div class="g2">
+						<div class="pres">Andy Polyakov</div>
+						<div><a href="https://www.youtube.com/watch?v=gWQymYB09NA"></a>Kernel as an HPC bottleneck</div>
+
+						<div class="pres">Ian Kumlien</div>
+						<div><a href="https://youtu.be/gWQymYB09NA?t=857"></a>I did a thing</div>
+
+						<div class="pres">Robert Fekete</div>
+						<div><a href="https://youtu.be/gWQymYB09NA?t=1438"></a>ELISA update</div>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
 							<h2>2024 -- Works for me!</h2>
 							<h3>Day one - 2024-05-23</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Uladzislau Rezki</span></td>
-						<td><a href="https://www.youtube.com/watch?v=tAKKMFxVRZw"></a>Reduce synchronize_rcu() latency</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Damien Le Moal</span></td>
-						<td><a href="https://www.youtube.com/watch?v=-PImiaGLg2k"></a>NVMe PCI Endpoint Function Driver</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Pankaj Raghav</span></td>
-						<td>A small history on Large block sizes in Linux</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Daniel Gomez</span></td>
-						<td><a href="https://www.youtube.com/watch?v=0REUukz9dwA"></a>eBPF in Large Block: A quick tour of the eBPF technology/ecosystem and how we use it at the block layer and filesystem levels for verification/validation</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Alice Ryhl</span></td>
-						<td><a href="https://www.youtube.com/watch?v=d76Bov2Zn0g"></a>Using Rust in the binder driver</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Alvin Šipraga</span></td>
-						<td><a href="https://www.youtube.com/watch?v=3JoxNq7OFUI"></a>Automotive Audio Bus (A2B) on Linux</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day two - 2024-05-24</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Julia Lawall</span></td>
-						<td><a href="https://www.youtube.com/watch?v=n1Wqz1pQsY0"></a><a href="https://drive.google.com/file/d/1EWDPz9vUZF7qjk-f8fCP7lUMu4iSfstz/view?usp=sharing">Should we balance? An adventure with formal verification of Linux kernel code</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Gustavo A. R. Silva</span></td>
-						<td><a href="https://www.youtube.com/watch?v=YNSq1C9SShI"></a><a href="https://drive.google.com/file/d/1GoV1WYfWHWklbPwY9ZRTvhjJE1OFXUqa/view?usp=sharing">Challenges and innovations towards safer flexible arrays in the Linux kernel</a></td>
-					</tr>
-					<tr>
-						<td><span class="press">Naresh Mehta</span></td>
-						<td><a href="https://www.youtube.com/watch?v=2VmJrNOmO_g"></a>ASPICE &amp; ASILs - What is it and path forward for Linux component adoption in Automotive</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Linus Walleij</span></td>
-						<td><a href="https://www.youtube.com/watch?v=M8BVlx-ILOM"></a><a href="https://drive.google.com/file/d/1G5scCGHjkapB1KNl4AG6lb3KbkhwC4SG/view?usp=sharing">The Memory Tagging Extension MTE for ARM AArch64</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Jørgen Sværke Hansen</span></td>
-						<td><a href="https://www.youtube.com/watch?v=Ey4dL8HUYu0"></a>Integrating Hardware-assisted Hot Data Detection into the Linux kernel</td>
-					</tr>
-					<tr>
-						<td>Lightning talks</td>
-						<td><a href="https://www.youtube.com/watch?v=tdaQbDsx8Rs"></a><span class="pres">Andy Polyakov</span> - Ultimate memory tagging<br/>
-							<a href="https://www.youtube.com/watch?v=tdaQbDsx8Rs&t=1377s"></a><span class="pres">Hans Holmberg</span> - Zoned XFS</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h2>2023 -- What does this button do?</h2>
-							<h3>Day one - 2023-05-25</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+					
+					<div class="pres">Uladzislau Rezki</div></td>
+					<div><a href="https://www.youtube.com/watch?v=tAKKMFxVRZw"></a>Reduce synchronize_rcu() latency</div>
+					
+					<div class="pres">Damien Le Moal</div>
+					<div><a href="https://www.youtube.com/watch?v=-PImiaGLg2k"></a>NVMe PCI Endpoint Function Driver</div>
 
-					<tr>
-						<td><span class="pres">Björn Töpel</span></td>
-						<td><a href="https://www.youtube.com/watch?v=EJ6-3M9K_tM"></a><a href="https://drive.google.com/file/d/1gal1Wg594-CrxqlsrYisk4xjwuqyL6tp/view?usp=sharing">The RISC-V Linux port; past/current/next</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Kevin Brodsky</span></td>
-						<td><a href="https://www.youtube.com/watch?v=2nzbT834HpY"></a><a href="https://drive.google.com/file/d/1DSHsSgGeXOK4BMAXfYMBl7xkG63ywEjC/view?usp=sharing">One giant leap for security: leveraging capabilities in Linux</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Vitaly Wool</span></td>
-						<td><a href="https://www.youtube.com/watch?v=VhxTC37PLXQ"></a>Implementing secure boot for AOSP running U-Boot</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Jørgen Hansen</span></td>
-						<td><a href="https://www.youtube.com/watch?v=0xWQKfcwPYU"></a>Experiences with CXL on Linux</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Yiannis Nikolakopoulos</span></td>
-						<td><a href="https://www.youtube.com/watch?v=4b2_thRE_fI"></a><a href="https://drive.google.com/file/d/1G8OE3efRuO3fdfJToSRTXq3JcGLpLJZ_/view?usp=sharing">ZeroPoint hardware accelerated memory compression in Linux</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andreas Hindborg</span></td>
-						<td><a href="https://www.youtube.com/watch?v=QUk0bPHzn7g"></a><a href="https://drive.google.com/file/d/1iZQHXjSDigP2hJG3k4PlvhZ4bCo0brO5/view?usp=sharing">Supporting zoned storage in Ublk</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Dennis Maisenbacher</span></td>
-						<td><a href="https://www.youtube.com/watch?v=G3YAw55lkLg"></a><a href="https://drive.google.com/file/d/1XDMBbGWxAeyLxXBdayULhclu96J0KEsu/view?usp=sharing">Zoned storage in the cloud</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Joakim Norell</span></td>
-						<td><a href="https://www.youtube.com/watch?v=nmh993RJ-ek"></a>Industrial espionage is not for fun</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Hans Holmberg</span></td>
-						<td><a href="https://www.youtube.com/watch?v=NfRNdqu9Ttw"></a>The year of the Linux handheld</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day two - 2023-05-26</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Linus Walleij</span></td>
-						<td><a href="https://www.youtube.com/watch?v=-rnv9lFMroM"></a><a href="https://drive.google.com/file/d/1uNgeo6HalR-pYVjkHIbvQIFEWLx9OgTn/view?usp=sharing">Rust: Abstraction and Productivity</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andreas Hindborg</span></td>
-						<td><a href="https://drive.google.com/file/d/11N79cYfPemqdBee0GFOLCMDnwFCIQjYn/view?usp=sharing">A null_blk Linux kernel driver in Rust</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Krister Walfridsson</span></td>
-						<td><a href="https://www.youtube.com/watch?v=3-xdMgvlnbA"></a><a href="https://drive.google.com/file/d/1BqinYMff7sjcvfM27PKxhJ043rMqzInF/view?usp=sharing">Verifying the absence of buffer overflows and other undefined behavior in C</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Daniel Krippner</span></td>
-						<td><a href="https://www.youtube.com/watch?v=1KgtgKdVgpA"></a><a href="https://drive.google.com/file/d/13FpVIwyThEryvZ1F-7SR11Gv09svRhMk/view?usp=sharing">What is a software-defined vehicle - OSS vs Safety</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Robert Fekete</span></td>
-						<td><a href="https://www.youtube.com/watch?v=BeBtLznHYLU&t=6s"></a><a href="https://docs.google.com/presentation/d/1OM5jmp6NdMQRH8iYVeSYhLdXtu29PYnUCuehNffWnng/edit?usp=sharing">Linux and Safety</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Julia Lawall</span></td>
-						<td><a href="https://www.youtube.com/watch?v=kk5E1d-6jvQ"></a><a href="https://drive.google.com/file/d/1BDdo2nPsyazjeyE5iHRGgljYvZGWirG0/view?usp=sharing">Graphing tools for scheduler tracing</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Anders Roxell</span></td>
-						<td><a href="https://www.youtube.com/watch?v=T1fWZoxXu0c"></a>Reproducible cross-compilation and cross-testing made easy</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Karl Roos</span></td>
-						<td>A next generartion DPU based on OpenWRT</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Ricardo Ribalda</span></td>
-						<td><a href="https://www.youtube.com/watch?v=Dokb4mTUghA&t=2s"></a><a href="https://drive.google.com/file/d/1g6cKnzcVbAF3a0ZCshuc-M27nabXeJdT/view?usp=sharing">Kcam, another way of accessing the cameras from Linux</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h2>2022 -- Are we here yet?</h2>
-							<h3>Day one - 2022-05-12</h3>
-							<h5><a alt="Video playlist" href="https://www.youtube.com/playlist?list=PLTIKt9flsc089GmCeR10mJLhqHbSC6mpi">Youtube playlist</a></h5>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Abel Vesa</span></td>
-						<td><a href="https://www.youtube.com/watch?v=55rEyDBhjdQ"></a><a href="https://drive.google.com/file/d/1Yqb1EhWuePaCzzQYn43ElkJea5PhnKfj/view?usp=sharing">Interconnect and Devfreq on i.MX - Bus Dynamic Frequency Scaling</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Damien Le Moal</span></td>
-						<td><a href="https://www.youtube.com/watch?v=MRDVk5W8BaU"></a><a href="https://drive.google.com/file/d/1I6ChFc0h4JY9qZdO1bY5oCAdYCSZVqWw/view?usp=sharing">Be On Time: Command Duration Limits Feature Support in Linux</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Johannes Thumshirn</span></td>
-						<td><a href="https://www.youtube.com/watch?v=gLQqbpoSCy8"></a><a href="https://docs.google.com/presentation/d/1Wj-tn7Ddr0IBDidD5dPcx4IFHwRUmOGu/edit?usp=sharing&ouid=110698868656495230656&rtpof=true&sd=true">BTRFS declustered parity RAID for zoned devices</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Brian "bex" Exelbierd</span></td>
-						<td><a href="https://www.youtube.com/watch?v=mk1_uLIxQ_o"></a><a href="https://drive.google.com/file/d/1F4wSMPZp8G01KxDLpoKC388G17thizRw/view?usp=sharing">The CentOS Project Changes (and now it’s better for production kernel changes)</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Ricardo Ribalda</span></td>
-						<td><a href="https://www.youtube.com/watch?v=oIFU2sXz7Jo"></a><a href="https://drive.google.com/file/d/1OdgGzd13sIdABCszjrn2mJQxjh58oIac/view?usp=share_link">Chrome OS</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andreas Hindborg</span></td>
-						<td><a href="https://www.youtube.com/watch?v=ubohmQSTeBY"></a><a href="https://drive.google.com/file/d/1o7DpttR2jpAfulvcmZ58xnzbONgzszsB/view?usp=sharing">Rust in the kernel</a></td>
-					</tr>
+					<div class="pres">Pankaj Raghav</div>
+					<div>A small history on Large block sizes in Linux</div>
 
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day two - 2022-05-13</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Jesper Dangaard Brouer</span></td>
-						<td><a href="https://www.youtube.com/watch?v=v2pvGsTNyJI"></a><a href="https://drive.google.com/file/d/1uHS59ejLTS7CYmDbzjiYGJP11JkZ9tlG/view?usp=sharing">XDP-hints via BPF Type Format (BTF) system</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Frey Alfredsson</span></td>
-						<td><a href="https://www.youtube.com/watch?v=tthG9LP5GFk"></a><a href="https://drive.google.com/file/d/1f5WIdBbwFdMIXwNS-btfjnRvGWEoO2Rw/view?usp=sharing">Bringing packet queueing to XDP</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Toke Høiland-Jørgensen</span></td>
-						<td><a href="https://www.youtube.com/watch?v=sPscuO9Ldh8"></a><a href="https://drive.google.com/file/d/1e7JWfHt2GKucZ8YZaQhXN3ehHcoNxOT6/view?usp=sharing">Lightning talk  XDP and BPF_PROG_RUN + XDP Q&amp;A / discussion</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Mikael Hedegren</span>, <span class="pres">Robert Storlind</span></td>
-						<td><a href="https://www.youtube.com/watch?v=lm95kmyLW48"></a><a href="https://drive.google.com/file/d/1xwLtQBjBEeIKBADkmZZy61Odcq8aroXW/view?usp=sharing">Linux on your e-bike</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andreas Elvstam, Samir Jasarevic</span></td>
-						<td><a href="https://www.youtube.com/watch?v=USSjoBKluNo"></a><a href="https://drive.google.com/file/d/1Aq3EHQMlKDYWEBqu_uOGZa2xKpzaj3GZ/view?usp=sharing">AppArmor: Enhancing Linux security by application hardening</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Philipp Ahmann</span></td>
-						<td><a href="https://www.youtube.com/watch?v=vmQUmqU42ac"></a><a href="https://drive.google.com/file/d/1qEn5oJbqAG7A4c_AWuxOo0ApKEAIHVGc/view?usp=sharing">ELISA and Apertis</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Alistair Francis</span></td>
-						<td><a href="https://www.youtube.com/watch?v=EMlNfC-wHBk"></a><a href="https://drive.google.com/file/d/1bCdTXHU0M1rSc_r46R46uyUYBgFcBs60/view?usp=sharing">Free RISC-V Systems: Benefits and Status of QEMU</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Joakim Nordell</span></td>
-						<td><a href="https://www.youtube.com/watch?v=5rlYz78zLM8"></a><a href="https://drive.google.com/file/d/1K3zCcbAubotegq9B96Ivnhsmc8W26Qfq/view?usp=sharing">What makes a device secure, robust and maybe even military graded?</a></td>
-					</tr>
+					<div class="pres">Daniel Gomez</div>
+					<div><a href="https://www.youtube.com/watch?v=0REUukz9dwA"></a>eBPF in Large Block: A quick tour of the eBPF technology/ecosystem and how we use it at the block layer and filesystem levels for verification/validation</div>
 
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2021 -- Noo... It's still here... :(</h2>
-						</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2020 -- What happened?!</h2>
-						</td>
-					</tr>
-                                        <tr>
-                                                <td class="divide" colspan=2>
-                                                        <h2>2019 -- Lion? Lyon?</h2>
-                                                        <h3>Day one - 2019-05-09</h3>
-                                                </td>
-                                        </tr>
+					<div class="pres">Alice Ryhl</div>
+					<div><a href="https://www.youtube.com/watch?v=d76Bov2Zn0g"></a>Using Rust in the binder driver</div>
 
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Toke Høiland-Jørgensen</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxMHM2ci16THZ5cEpFSGNsaG80YVlyVUx4c3I0/view?usp=sharing&resourcekey=0-wvn6N5RSmytxyJTMykPnag">Overview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Uladzislau Rezki</span></td>
-						<td><a href="https://drive.google.com/file/d/1u_z7HCFPTavP-3wW7OYGe-WlRUD-FaP1/view?usp=sharing">Improving KVA/VMAP allocator in Linux kernel</a> (merged in 5.2)</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Matthias Brugger</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxTU5lZzdfTllwYWFEU2h3S2I5RWNHV2xseHhN/view?usp=sharing&resourcekey=0-Z4mBV5qQ2AttyFPagVqirw">kdump/kexec internals</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Andy Polyakov</span></td>
-						<td>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Thomas Gleixner</span></td>
-						<td>Mopping up kernel messes one at a time, this time: licensing</td>
-					</tr>
-                                        <tr>
-                                                <td class="divide" colspan=2>
-                                                        <h3>Day two - 2019-05-10</h3>
-                                                </td>
-                                        </tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Jesper Dangaard Brouer</span></td>
-						<td>XDP As a building block for other FOSS projects</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Javier González</span></td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeEFhUDhTWms5M3Aza2ZqRzZGVHh0TFZIYmE4/view?usp=sharing&resourcekey=0-wFmayMYNiqfWwEbrWrLR8Q">XDSP: eXpress Data Storage Path</a></td>
-					<tr>
-						<td><span class="pres">Klaus Jensen</span></td>
-						<td><a href="https://drive.google.com/file/d/1K5vLnUhj9BdoBzXiV0hrHlZtqEXSGIgQ/view?usp=sharing">Binary Index and Journal Embedding in The Linear Tape File System</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Daniel Baluta</span></td>
-						<td><a href="https://drive.google.com/open?id=0BybszUG3ewMxQ3pzWmcxOWs5OE1TZ29ITGJ6NDlXVGYwTXpB">Sound Open Firmware with a focus on i.MX integration</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Damien Le Moal</span></td>
-						<td>RISC-V</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Matias Bjørling</span></td>
-						<td>ZNS - Zoned Namespaces</td>
-					</tr>
-					<tr>
-						<td colspan=2><h4>Lightning talks:</h4><td/>
-					</tr>
-					<tr>
-						<td><span class="pres">Hans Holmberg</span></td>
-						<td><a href="https://drive.google.com/file/d/1k2ojnCfk8Vn7kMsEX003-15uhKkOJkMy/view?usp=sharing">LZBD - A new, zoned, lightnvm target</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Robert Fekete</span></td>
-						<td>A Security Gateway Based on Linux or anything else?</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Abel Vesa</span></td>
-						<td>imx8mq: cpuidle: GIC wake_request workaround in kernel and ATF (Abel Vesa)</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h2>2018 - Ouroboros-Unicorn edition</h2>
-							<h3>Day one - 2018-05-03</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Johan Hovold</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxTHYtMFh5amRkQlpFd0FWS2xCUHlZa0hHbjhj/view?usp=sharing&resourcekey=0-1JLv9A3iFgM8u1aktxSm9g">The serial device bus</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Philippe Bonnet</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxcklFSGp2MWN6ZjV4cTZJU2VZVjFOaFM3R3Zz/view?usp=sharing&resourcekey=0-NWTp2Z8InrDwEl_9GZ9Qfg">Near data procéssing and it's implications for Linux</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Hans Holmberg</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxWWxhMG8wdUlwZGZUUHN1RU9nOHpyNFI5cVdr/view?usp=sharing&resourcekey=0-AL4XAUXC2GhHYLSo7Jo5og">PBLK - a guided tour</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Martin Hell</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxRk5oMFVZSjROR1ByMlBGLTBWTl9rdWZ6R19r/view?usp=sharing&resourcekey=0-MYNf3LZdSePOO7PGkRJwAw">The SECONDS project</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Robert Fekete</span> and <span class="pres">Joakim Nordell</span></td>
-						<td>Security in cars</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=3>
-							<h3>Day Two - 2018-05-04</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentationt</th>
-					</tr>
-					<tr>
-						<td><span class="pres">Linus Walleij</span></td>
-						<td><a href="https://drive.google.com/file/d/1c2fNr-Rih0LHsQ5pqrDG7qaUXXsLslzw/view?usp=sharing">Maintaining really old ARM systems</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Niklas Cassel</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxVTlVMld3bW5KX3hfZkV3Q3ctNldQSUl5cGM4/view?usp=sharing&resourcekey=0-8-bOZPOkTXlFiAAT6qIk4Q">An introduction to PCIe</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Jesper Dangaard Brouer</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxU1dWNGljVkVhWlVjaWxyckZWS2p3cENIbzZB/view?usp=sharing&resourcekey=0-sPJnhAjahEIPWrDsh1Lxug">XDP - now with redirects</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Björn Töpel</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxNXdHWGVIRmx3ZEp5LXZGTEVxMTBCVTdmeVgw/view?usp=sharing&resourcekey=0-b8IBiX0qtVW9aJ_tUN1a8w">AF_XDP: An order of magnitude faster packet processing with standard Linux</a></td>
-					</tr>
-					<tr>
-						<td><span class="pres">Simon A. F. Lund</span></td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxYUxtQWtxell0SXFQR3h2SzRJdWw3d25Sa2xR/view?usp=sharing&resourcekey=0-mj24cbizv_BqSmVsPVR3mg">Presentation</a> + Discussion: Testing</td>
-					</tr>
-					<tr>
-						<td><span class="pres">Octavian Purdila</td>
-						<td>Upstreaming the <a href="https://linux-kernel-labs.github.io/master/">linux kernel teaching project</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2017 - Mucha edition</h2>
-							<h3>Day one - 2017-05-04</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Hans Holmberg</span>
-						</td>
-						<td>The Open Kernel Teaching Project</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">David Herrmann</span> &amp;
-							<span class="pres">Tom Gundersen</span>
-						</td>
-						<td>BUS1</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Linus Walleij</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1ICwm3x_QU74ttfpek_hV_0oZDcZBCsvuezyBSDq5sgs/edit?usp=sharing">Uncle Blocklayer</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Jesper Dangaard Brouer</span>
-						</td>
-						<td>Linux Kernel: eXpress Data Path (XDP) for DDoS protection</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Christoffer Jerkeby</span>
-						</td>
-						<td>Security in DevOps</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Julia Lawall</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLYXNiNXBJSGthX0tDa19wR3NxZnhxRDVFUVpZ/view?usp=sharing&resourcekey=0-Ue6goy9rXq4_kwBIIb4kPw">Coccinelle</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Iago Abal</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeWFvYzctMmNVMmlfQzVQNnEyWVBXOXFiMnVR/view?usp=sharing&resourcekey=0-_6FnSM8GHcMXEi8SQ9DU0A">Finding Non-Trivial Double-Lock Bugs in Linux Device Drivers with EBA</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h3>Day two - 2017-05-05</h3>
-						</td>
-					</tr>
-					<tr>
-						<td class="pres">Christoffer Dall</td>
-						<td>The design and implementation of KVM/ARM</td>
-					</tr>
-					<tr>
-						<td class="pres">Mian Yousaf Kaukab</td>
-						<td>openSUSE hardware enablement</td>
-					</tr>
-					<tr>
-						<td class="pres">Thomas Gleixner</td>
-						<td>The anatomy of Linux Realtime</td>
-					</tr>
-					<tr>
-						<td class="pres">David Henningsson</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxN0VCYkZjNGV6Nnc/view?usp=sharing&resourcekey=0-NygJ-3CQc5nzF6El0eBLNg">Low latency audio through core isolation</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Robert Fekete</span>, 
-							<span class="pres">Gunnar Andersson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxbzQ2TXVGMnExVGU3LVFfbGtxMUNVZmhNWGJN/view?usp=sharing&resourcekey=0-bUnY4Ssyl7f3yXoqzAfbFA">Linux and cars</a>, and GENIVI Alliance introduction by Gunnar</td>
-					</tr>
-					<tr>
-						<td class="pres">Krister Walfridsson</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxUmRYN2FNczZvRHBmbERtSHR4b3FndzlxMHpB/view?usp=sharing&resourcekey=0-h_9MnKwA_Skq018SdUFYQw">Getting more performance out of GCC</a></td>
-					</tr>
-					<tr>
-						<td colspan=2>
-							<h3>Lightning talks</h3>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Patrik Åberg</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLQm1sd0JJUTczNWM/view?usp=sharing&resourcekey=0-zLFSOCpIuQqySh9v4-xttg">The DMCE Project (Did My Code Execute)</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Rabin Vincent</span>
-						</td>
-						<td><a href="https://github.com/rabinv/kninja">Kninja - building kernels faster</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2016 - Beerlin edition</h2>
-							<h3>Day one - 2016-05-12</h3>
-						</td>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Robert Fekete</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1Za2JZv8lscH5iyimXUOKh4BLSNmDuCQstHHx_VJ_iRc/edit?usp=sharing">ChromeOS explained</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Linus Walleij</span> -
-							<span class="org">linaro</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1-EMAsTW8OmP-QDgSlt8dpNVHCTyvcebpr8fteiTBcjA/edit?usp=sharing">IIO kernel</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Daniel Baluta</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1oK2oUSIU4kipjrsLMvdAFYLeZPEZ-1eTIBxdLOXq55Y/edit?usp=sharing">IIO Android HAL</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Mikael Persson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLcE9fM0R4dUpIZWc/view?usp=sharing&resourcekey=0-VyjRjQ3VQbzjrwxwIZFNzw">Video for linux</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Patrik Jakobsson</span>
-						</td>
-						<td>Facetime HD driver for linux</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Daniel Baluta</span>
-						</td>
-						<td>Linux kernel programming undergraduate course</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Fredrik Hugosson</span> -
-							<span class="org">axis</span>
-						</td>
-						<td>ACoC</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Constatin Musca</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/0BybszUG3ewMxTkctcWxfMEc0RFFBeG1yRjRrNVVObzdFOHVr/edit?usp=sharing&ouid=110698868656495230656&resourcekey=0-c0hQW9YqoOVK1UVph6Hc7Q&rtpof=true&sd=true">Brillo</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h3>Day two - 2016-05-13</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Octavian Purdila</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1s6ih4Cs6GFU-tzPlDBPUjmTr_KJfV7GHzXN0Y_XHszw/edit?usp=sharing">Linux kernel as a library</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">David Henningsson</span>
-						</td>
-						<td>DKMS - Dynamic Kenrel Module Support</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Fabrizio Demaria</span>
-						</td>
-						<td>Security of Multipath TCP</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Andy Polyakov</span>
-						</td>
-						<td>OpenSSL</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Johan Hovold</span>
-						</td>
-						<td>Greybus</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Matias Bjørling</span>
-						</td>
-						<td>Open-channel solid state drives</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Daniel Baluta</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/14ve25ye7Ed_cppO-PRZ_z1LKLwTT6NIT1z-Cn9QriwQ/edit?usp=sharing">Outreachy</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Krister Walfridsson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxNnZEejh1RFJyeEtnUFhpb2hIQkRxazdSbVRn/view?usp=sharing&resourcekey=0-2pHwjP1CyapjcMH2BaVgzg">GCC</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Joakim Nordell</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1RI-wtZYoDt4dk9KXgM-VtmTvB2nCYX3e8ts1KiTIhAs/edit?usp=sharing">TCPDUMP</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2015 - Leprechaun edition</h2>
-							<h3>Day one - 2015-05-07</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Martina Maggio</span> -
-							<span class="org">lth</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLWVdSdnhwaUlYd1lqYV92RmEzSHlhR0tYdmZZ/view?usp=sharing&resourcekey=0-pGipTAAOi5CdPTpCEvELtg">rt-bench: a tool for profiling schedulers implmentation for real-time applications</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Rabin Vincent</span> -
-							<span class="org">axis</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxQ1h1R3d1QXVLV0tKWW04d0c1OW96SGM5QzlZ/view?usp=sharing&resourcekey=0-uy-XU-RPFt4yARZnfr9-Jw">ftrace</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Robert Fekete</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td>Linux kernel graphics, past present, and future + what did android drag in?</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Kim Højgaard-Hansen</span> -
-							<span class="org">prevas</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxeXFyckNNRjZvZVpOMkE5c2RkSEtsNjBLLXRj/view?usp=sharing&resourcekey=0-430KeIBUdIAxJlnyzQRyhQ">Realising efficient industrial linux development</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Hans Holmberg</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td>Devicetree vs ACPI - A tale of two trees</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Per Persson</span> -
-							<span class="org">ericsson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxVjBXem1VMEEzdzA/view?usp=sharing&resourcekey=0-Jjp90KoECZtrzxAtLysv-g">Calvin - a platform for IoT development</a> - available on <a href="https://github.com/EricssonResearch/calvin-base">GitHub</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Hans Holmberg</span> &amp; <span class="pres">Anders Nilsson</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td>Minnowboard MAX &amp; Edison dev boards</td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h3>Day two - 2015-05-08</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Octavian Purdila</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxUVRNSThYWjBncndabndaUmliTmptWHdrb2tZ/view?usp=sharing&resourcekey=0-7MzXWqtxECZa1ImChFwpng">Shaping the linux kernel MPTCP implementation thowards upstream acceptance</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Joakim Bech</span> -
-							<span class="org">linaro</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1pXCxGh0eCW0S-xgLOZoGhmRxPkd8xepzYXC_eAWoU44/edit?usp=sharing">Trustzone</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Mikael Lindberg</span> -
-							<span class="org">axis</span>
-						</td>
-						<td>Better CPU governor joint project SONY/LU</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Christoffer Jerkeby</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxZXg2anVHMmVwOEtFTTR2MjFOSzRwOWxWejc4/view?usp=sharing&resourcekey=0-dOvgaN09MKMSyrFWSZYkKw">The python-wifi API &amp; the wifirssi tool</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">David Henningsson</span>
-						</td>
-						<td>HDA-jack-retask</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Julian Coccia</span> -
-							<span class="org">ericsson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLTXpQWjF1YUFvSEYySDlMYTluRDZlR3RQV3NR/view?usp=sharing&resourcekey=0-h37jMflokdZ2WfS11MVrrA">FOSS handling</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Javier González</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxQV9abXpoc201ZC12OU1SSDRkYldMRjBuMzhR/view?usp=sharing&resourcekey=0-aHn1scyUQW39MjoRlPDYtg">Linux kernel abstractions for open-channel solid state drives</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h2>2014 - kerneval edition</h2>
-							<p>The first ever LLC</p>
-							<h3>Day one - 2014-05-19</h3>
-						</td>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Linus Walleij</span> -
-							<span class="org">linaro</span>
-						</td>
-						<td><a href="https://docs.google.com/presentation/d/1eKjYHV2tnAxzgLZH27jG2HnuiIndVvZcwyAXA8eL2EI/edit?usp=sharing">Kernel maintenance &amp; git</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Ulf Hansson</span> -
-							<span class="org">linaro</span>
-						</td>
-						<td>The MMC subsystem</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Hans Holmberg</span> -
-							<span class="org">intel_otc</span>
-						</td>
-						<td>Tidying a patch mountain</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Julian Coccia</span> -
-							<span class="org">ericsson</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxbGdHQ0VUTG5PUHB6UTBVR2VtSlJnZnhPSDk0/view?usp=sharing&resourcekey=0-Yf_NjIYf_g_t9Uw2ZWhStw">Ericsson FOSS process</a></td>
-					</tr>
-					<tr>
-						<td class="divide" colspan=2>
-							<h3>Day two - 2014-05-20</h3>
-						</td>
-					</tr>
-					<tr>
-						<th>Presenter</th>
-						<th>Presentation</th>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">Jesper Nilsson</span> -
-							<span class="org">axis</span>
-						</td>
-						<td><a href="https://drive.google.com/file/d/0BybszUG3ewMxZjdVNnY5XzZORUJJTnhLOHJhN3JpUkNWNUZ3/view?usp=sharing&resourcekey=0-5RTiILE9ysMlnXNJKD3P7Q">Doing it wrong</a></td>
-					</tr>
-					<tr>
-						<td>
-							<span class="pres">David Henningsson</span> -
-							<span class="org">canonical</span>
-						</td>
-						<td>Audio stack introduction</td>
-					</tr>
-				</table>
+					<div class="pres">Alvin Šipraga</div>
+					<div><a href="https://www.youtube.com/watch?v=3JoxNq7OFUI"></a>Automotive Audio Bus (A2B) on Linux</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2024-05-24</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Julia Lawall</div>
+					<div><a href="https://www.youtube.com/watch?v=n1Wqz1pQsY0"></a><a href="https://drive.google.com/file/d/1EWDPz9vUZF7qjk-f8fCP7lUMu4iSfstz/view?usp=sharing">Should we balance? An adventure with formal verification of Linux kernel code</a></div>
+
+					<div class="pres">Gustavo A. R. Silva</div>
+					<div><a href="https://www.youtube.com/watch?v=YNSq1C9SShI"></a><a href="https://drive.google.com/file/d/1GoV1WYfWHWklbPwY9ZRTvhjJE1OFXUqa/view?usp=sharing">Challenges and innovations towards safer flexible arrays in the Linux kernel</a></div>
+
+					<div class="press">Naresh Mehta</div>
+					<div><a href="https://www.youtube.com/watch?v=2VmJrNOmO_g"></a>ASPICE &amp; ASILs - What is it and path forward for Linux component adoption in Automotive</div>
+
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://www.youtube.com/watch?v=M8BVlx-ILOM"></a><a href="https://drive.google.com/file/d/1G5scCGHjkapB1KNl4AG6lb3KbkhwC4SG/view?usp=sharing">The Memory Tagging Extension MTE for ARM AArch64</a></div>
+
+					<div class="pres">Jørgen Sværke Hansen</div></td>
+					<div><a href="https://www.youtube.com/watch?v=Ey4dL8HUYu0"></a>Integrating Hardware-assisted Hot Data Detection into the Linux kernel</div>
+
+					<div>Lightning talks:</div>
+					<div class="g2">
+						<div class="pres">Andy Polyakov</div>
+						<div><a href="https://www.youtube.com/watch?v=tdaQbDsx8Rs"></a>Ultimate memory tagging</div>
+						
+						<div class="pres">Hans Holmberg</div>
+						<div><a href="https://www.youtube.com/watch?v=tdaQbDsx8Rs&t=1377s"></a>Zoned XFS</div>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2023 -- What does this button do?</h2>
+						<h3>Day one - 2023-05-25</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Björn Töpel</div>
+					<div><a href="https://www.youtube.com/watch?v=EJ6-3M9K_tM"></a><a href="https://drive.google.com/file/d/1gal1Wg594-CrxqlsrYisk4xjwuqyL6tp/view?usp=sharing">The RISC-V Linux port; past/current/next</a></div>
+
+					<div class="pres">Kevin Brodsky</div>
+					<div><a href="https://www.youtube.com/watch?v=2nzbT834HpY"></a><a href="https://drive.google.com/file/d/1DSHsSgGeXOK4BMAXfYMBl7xkG63ywEjC/view?usp=sharing">One giant leap for security: leveraging capabilities in Linux</a></div>
+
+					<div class="pres">Vitaly Wool</div>
+					<div><a href="https://www.youtube.com/watch?v=VhxTC37PLXQ"></a>Implementing secure boot for AOSP running U-Boot</div>
+					
+					<div class="pres">Jørgen Hansen</div>
+					<div><a href="https://www.youtube.com/watch?v=0xWQKfcwPYU"></a>Experiences with CXL on Linux</div>
+					
+					<div class="pres">Yiannis Nikolakopoulos</div>
+					<div><a href="https://www.youtube.com/watch?v=4b2_thRE_fI"></a><a href="https://drive.google.com/file/d/1G8OE3efRuO3fdfJToSRTXq3JcGLpLJZ_/view?usp=sharing">ZeroPoint hardware accelerated memory compression in Linux</a></div>
+
+					<div class="pres">Andreas Hindborg</div>
+					<div><a href="https://www.youtube.com/watch?v=QUk0bPHzn7g"></a><a href="https://drive.google.com/file/d/1iZQHXjSDigP2hJG3k4PlvhZ4bCo0brO5/view?usp=sharing">Supporting zoned storage in Ublk</a></div>
+
+					<div class="pres">Dennis Maisenbacher</div>
+					<div><a href="https://www.youtube.com/watch?v=G3YAw55lkLg"></a><a href="https://drive.google.com/file/d/1XDMBbGWxAeyLxXBdayULhclu96J0KEsu/view?usp=sharing">Zoned storage in the cloud</a></div>
+
+					<div class="pres">Joakim Norell</div>
+					<div><a href="https://www.youtube.com/watch?v=nmh993RJ-ek"></a>Industrial espionage is not for fun</div>
+
+					<div class="pres">Hans Holmberg</div>
+					<div><a href="https://www.youtube.com/watch?v=NfRNdqu9Ttw"></a>The year of the Linux handheld</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2023-05-26</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+					
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://www.youtube.com/watch?v=-rnv9lFMroM"></a><a href="https://drive.google.com/file/d/1uNgeo6HalR-pYVjkHIbvQIFEWLx9OgTn/view?usp=sharing">Rust: Abstraction and Productivity</a></div>
+
+					<div class="pres">Andreas Hindborg</div>
+					<div><a href="https://drive.google.com/file/d/11N79cYfPemqdBee0GFOLCMDnwFCIQjYn/view?usp=sharing">A null_blk Linux kernel driver in Rust</a></div>
+
+					<div class="pres">Krister Walfridsson</div>
+					<div><a href="https://www.youtube.com/watch?v=3-xdMgvlnbA"></a><a href="https://drive.google.com/file/d/1BqinYMff7sjcvfM27PKxhJ043rMqzInF/view?usp=sharing">Verifying the absence of buffer overflows and other undefined behavior in C</a></div>
+
+					<div class="pres">Daniel Krippner</div>
+					<div><a href="https://www.youtube.com/watch?v=1KgtgKdVgpA"></a><a href="https://drive.google.com/file/d/13FpVIwyThEryvZ1F-7SR11Gv09svRhMk/view?usp=sharing">What is a software-defined vehicle - OSS vs Safety</a></div>
+
+					<div class="pres">Robert Fekete</div>
+					<div><a href="https://www.youtube.com/watch?v=BeBtLznHYLU&t=6s"></a><a href="https://docs.google.com/presentation/d/1OM5jmp6NdMQRH8iYVeSYhLdXtu29PYnUCuehNffWnng/edit?usp=sharing">Linux and Safety</a></div>
+
+					<div class="pres">Julia Lawall</div>
+					<div><a href="https://www.youtube.com/watch?v=kk5E1d-6jvQ"></a><a href="https://drive.google.com/file/d/1BDdo2nPsyazjeyE5iHRGgljYvZGWirG0/view?usp=sharing">Graphing tools for scheduler tracing</a></div>
+
+					<div class="pres">Anders Roxell</div>
+					<div><a href="https://www.youtube.com/watch?v=T1fWZoxXu0c"></a>Reproducible cross-compilation and cross-testing made easy</div>
+
+					<div class="pres">Karl Roos</div>
+					<div>A next generartion DPU based on OpenWRT</div>
+
+					<div class="pres">Ricardo Ribalda</div>
+					<div><a href="https://www.youtube.com/watch?v=Dokb4mTUghA&t=2s"></a><a href="https://drive.google.com/file/d/1g6cKnzcVbAF3a0ZCshuc-M27nabXeJdT/view?usp=sharing">Kcam, another way of accessing the cameras from Linux</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2022 -- Are we here yet?</h2>
+						<h3>Day one - 2022-05-12</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Abel Vesa</div>
+					<div><a href="https://www.youtube.com/watch?v=55rEyDBhjdQ"></a><a href="https://drive.google.com/file/d/1Yqb1EhWuePaCzzQYn43ElkJea5PhnKfj/view?usp=sharing">Interconnect and Devfreq on i.MX - Bus Dynamic Frequency Scaling</a></div>
+
+					<div class="pres">Damien Le Moal</div>
+					<div><a href="https://www.youtube.com/watch?v=MRDVk5W8BaU"></a><a href="https://drive.google.com/file/d/1I6ChFc0h4JY9qZdO1bY5oCAdYCSZVqWw/view?usp=sharing">Be On Time: Command Duration Limits Feature Support in Linux</a></div>
+
+					<div class="pres">Johannes Thumshirn</div>
+					<div><a href="https://www.youtube.com/watch?v=gLQqbpoSCy8"></a><a href="https://docs.google.com/presentation/d/1Wj-tn7Ddr0IBDidD5dPcx4IFHwRUmOGu/edit?usp=sharing&ouid=110698868656495230656&rtpof=true&sd=true">BTRFS declustered parity RAID for zoned devices</a></div>
+
+					<div class="pres">Brian "bex" Exelbierd</div>
+					<div><a href="https://www.youtube.com/watch?v=mk1_uLIxQ_o"></a><a href="https://drive.google.com/file/d/1F4wSMPZp8G01KxDLpoKC388G17thizRw/view?usp=sharing">The CentOS Project Changes (and now it’s better for production kernel changes)</a></div>
+
+					<div class="pres">Ricardo Ribalda</div>
+					<div><a href="https://www.youtube.com/watch?v=oIFU2sXz7Jo"></a><a href="https://drive.google.com/file/d/1OdgGzd13sIdABCszjrn2mJQxjh58oIac/view?usp=share_link">Chrome OS</a></div>
+
+					<div class="pres">Andreas Hindborg</div>
+					<div><a href="https://www.youtube.com/watch?v=ubohmQSTeBY"></a><a href="https://drive.google.com/file/d/1o7DpttR2jpAfulvcmZ58xnzbONgzszsB/view?usp=sharing">Rust in the kernel</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2022-05-13</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Jesper Dangaard Brouer</div>
+					<div><a href="https://www.youtube.com/watch?v=v2pvGsTNyJI"></a><a href="https://drive.google.com/file/d/1uHS59ejLTS7CYmDbzjiYGJP11JkZ9tlG/view?usp=sharing">XDP-hints via BPF Type Format (BTF) system</a></div>
+
+					<div class="pres">Frey Alfredsson</div>
+					<div><a href="https://www.youtube.com/watch?v=tthG9LP5GFk"></a><a href="https://drive.google.com/file/d/1f5WIdBbwFdMIXwNS-btfjnRvGWEoO2Rw/view?usp=sharing">Bringing packet queueing to XDP</a></div>
+
+					<div class="pres">Toke Høiland-Jørgensen</div>
+					<div><a href="https://www.youtube.com/watch?v=sPscuO9Ldh8"></a><a href="https://drive.google.com/file/d/1e7JWfHt2GKucZ8YZaQhXN3ehHcoNxOT6/view?usp=sharing">Lightning talk  XDP and BPF_PROG_RUN + XDP Q&amp;A / discussion</a></div>
+
+					<div><span class="pres">Mikael Hedegren</span>, <span class="pres">Robert Storlind</span></div>
+					<div><a href="https://www.youtube.com/watch?v=lm95kmyLW48"></a><a href="https://drive.google.com/file/d/1xwLtQBjBEeIKBADkmZZy61Odcq8aroXW/view?usp=sharing">Linux on your e-bike</a></div>
+
+					<div><span class="pres">Andreas Elvstam</span>, <span class="pres">Samir Jasarevic</span></div>
+					<div><a href="https://www.youtube.com/watch?v=USSjoBKluNo"></a><a href="https://drive.google.com/file/d/1Aq3EHQMlKDYWEBqu_uOGZa2xKpzaj3GZ/view?usp=sharing">AppArmor: Enhancing Linux security by application hardening</a></div>
+
+					<div class="pres">Philipp Ahmann</div>
+					<div><a href="https://www.youtube.com/watch?v=vmQUmqU42ac"></a><a href="https://drive.google.com/file/d/1qEn5oJbqAG7A4c_AWuxOo0ApKEAIHVGc/view?usp=sharing">ELISA and Apertis</a></div>
+
+					<div class="pres">Alistair Francis</div>
+					<div><a href="https://www.youtube.com/watch?v=EMlNfC-wHBk"></a><a href="https://drive.google.com/file/d/1bCdTXHU0M1rSc_r46R46uyUYBgFcBs60/view?usp=sharing">Free RISC-V Systems: Benefits and Status of QEMU</a></div>
+
+					<div class="pres">Joakim Nordell</div>
+					<div><a href="https://www.youtube.com/watch?v=5rlYz78zLM8"></a><a href="https://drive.google.com/file/d/1K3zCcbAubotegq9B96Ivnhsmc8W26Qfq/view?usp=sharing">What makes a device secure, robust and maybe even military graded?</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2021 -- Noo... It's still here... :(</h2>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2020 -- What happened?!</h2>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2019 -- Lion? Lyon?</h2>
+						<h3>Day one - 2019-05-09</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Toke Høiland-Jørgensen</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxMHM2ci16THZ5cEpFSGNsaG80YVlyVUx4c3I0/view?usp=sharing&resourcekey=0-wvn6N5RSmytxyJTMykPnag">Overview of the bufferbloat mitigation efforts in the kernel WiFi stack; status and ongoing work</a></div>
+
+					<div class="pres">Uladzislau Rezki</div>
+					<div><a href="https://drive.google.com/file/d/1u_z7HCFPTavP-3wW7OYGe-WlRUD-FaP1/view?usp=sharing">Improving KVA/VMAP allocator in Linux kernel</a> (merged in 5.2)</div>
+
+					<div class="pres">Matthias Brugger</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxTU5lZzdfTllwYWFEU2h3S2I5RWNHV2xseHhN/view?usp=sharing&resourcekey=0-Z4mBV5qQ2AttyFPagVqirw">kdump/kexec internals</a></div>
+
+					<div class="pres">Andy Polyakov</div>
+					<div>It's all speculative [or on problems with speculative instruction execution in contemporary processors].</div>
+
+					<div class="pres">Thomas Gleixner</div>
+					<div>Mopping up kernel messes one at a time, this time: licensing</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2019-05-10</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Jesper Dangaard Brouer</div>
+					<div>XDP As a building block for other FOSS projects</div>
+
+					<div class="pres">Javier González</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeEFhUDhTWms5M3Aza2ZqRzZGVHh0TFZIYmE4/view?usp=sharing&resourcekey=0-wFmayMYNiqfWwEbrWrLR8Q">XDSP: eXpress Data Storage Path</a></div>
+
+					<div class="pres">Klaus Jensen</div>
+					<div><a href="https://drive.google.com/file/d/1K5vLnUhj9BdoBzXiV0hrHlZtqEXSGIgQ/view?usp=sharing">Binary Index and Journal Embedding in The Linear Tape File System</a></div>
+
+					<div class="pres">Daniel Baluta</div>
+					<div><a href="https://drive.google.com/open?id=0BybszUG3ewMxQ3pzWmcxOWs5OE1TZ29ITGJ6NDlXVGYwTXpB">Sound Open Firmware with a focus on i.MX integration</a></div>
+
+					<div class="pres">Damien Le Moal</div>
+					<div>RISC-V</div>
+
+					<div class="pres">Matias Bjørling</div>
+					<div>ZNS - Zoned Namespaces</div>
+
+					<div>Lightning talks:</div>
+					<div class="g2">
+						<div class="pres">Hans Holmberg</div>
+						<div><a href="https://drive.google.com/file/d/1k2ojnCfk8Vn7kMsEX003-15uhKkOJkMy/view?usp=sharing">LZBD - A new, zoned, lightnvm target</a></div>
+
+						<div class="pres">Robert Fekete</div>
+						<div>A Security Gateway Based on Linux or anything else?</div>
+
+						<div class="pres">Abel Vesa</div>
+						<div>imx8mq: cpuidle: GIC wake_request workaround in kernel and ATF (Abel Vesa)</div>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2018 - Ouroboros-Unicorn edition</h2>
+						<h3>Day one - 2018-05-03</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Johan Hovold</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxTHYtMFh5amRkQlpFd0FWS2xCUHlZa0hHbjhj/view?usp=sharing&resourcekey=0-1JLv9A3iFgM8u1aktxSm9g">The serial device bus</a></div>
+
+					<div class="pres">Philippe Bonnet</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxcklFSGp2MWN6ZjV4cTZJU2VZVjFOaFM3R3Zz/view?usp=sharing&resourcekey=0-NWTp2Z8InrDwEl_9GZ9Qfg">Near data procéssing and it's implications for Linux</a></div>
+
+					<div class="pres">Hans Holmberg</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxWWxhMG8wdUlwZGZUUHN1RU9nOHpyNFI5cVdr/view?usp=sharing&resourcekey=0-AL4XAUXC2GhHYLSo7Jo5og">PBLK - a guided tour</a></div>
+
+					<div class="pres">Martin Hell</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxRk5oMFVZSjROR1ByMlBGLTBWTl9rdWZ6R19r/view?usp=sharing&resourcekey=0-MYNf3LZdSePOO7PGkRJwAw">The SECONDS project</a></div>
+
+					<div> <span class="pres">Robert Fekete</span> and <span class="pres">Joakim Nordell</span></div>
+					<div>Security in cars</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day Two - 2018-05-04</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentationt</b></div>
+
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://drive.google.com/file/d/1c2fNr-Rih0LHsQ5pqrDG7qaUXXsLslzw/view?usp=sharing">Maintaining really old ARM systems</a></div>
+
+					<div class="pres">Niklas Cassel</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxVTlVMld3bW5KX3hfZkV3Q3ctNldQSUl5cGM4/view?usp=sharing&resourcekey=0-8-bOZPOkTXlFiAAT6qIk4Q">An introduction to PCIe</a></div>
+
+					<div class="pres">Jesper Dangaard Brouer</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxU1dWNGljVkVhWlVjaWxyckZWS2p3cENIbzZB/view?usp=sharing&resourcekey=0-sPJnhAjahEIPWrDsh1Lxug">XDP - now with redirects</a></div>
+
+					<div class="pres">Björn Töpel</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxNXdHWGVIRmx3ZEp5LXZGTEVxMTBCVTdmeVgw/view?usp=sharing&resourcekey=0-b8IBiX0qtVW9aJ_tUN1a8w">AF_XDP: An order of magnitude faster packet processing with standard Linux</a></div>
+
+					<div class="pres">Simon A. F. Lund</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxYUxtQWtxell0SXFQR3h2SzRJdWw3d25Sa2xR/view?usp=sharing&resourcekey=0-mj24cbizv_BqSmVsPVR3mg">Presentation</a> + Discussion: Testing</div>
+
+					<div class="pres">Octavian Purdila</div>
+					<div>Upstreaming the <a href="https://linux-kernel-labs.github.io/master/">linux kernel teaching project</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2017 - Mucha edition</h2>
+						<h3>Day one - 2017-05-04</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+
+					<div class="pres">Hans Holmberg</div>
+					<div>The Open Kernel Teaching Project</div>
+
+					<div class="pres"><span class="pres">David Herrmann</span> &amp;
+						<span class="pres">Tom Gundersen</span></div>
+					<div>BUS1</div>
+
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://docs.google.com/presentation/d/1ICwm3x_QU74ttfpek_hV_0oZDcZBCsvuezyBSDq5sgs/edit?usp=sharing">Uncle Blocklayer</a></div>
+					
+					<div class="pres">Jesper Dangaard Brouer</div>
+					<div>Linux Kernel: eXpress Data Path (XDP) for DDoS protection</div>
+
+					<div class="pres">Christoffer Jerkeby</div>
+					<div>Security in DevOps</div>
+					
+					<div class="pres">Julia Lawall</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLYXNiNXBJSGthX0tDa19wR3NxZnhxRDVFUVpZ/view?usp=sharing&resourcekey=0-Ue6goy9rXq4_kwBIIb4kPw">Coccinelle</a></div>
+
+					<div class="pres">Iago Abal</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLeWFvYzctMmNVMmlfQzVQNnEyWVBXOXFiMnVR/view?usp=sharing&resourcekey=0-_6FnSM8GHcMXEi8SQ9DU0A">Finding Non-Trivial Double-Lock Bugs in Linux Device Drivers with EBA</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2017-05-05</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Christoffer Dall</div>
+					<div>The design and implementation of KVM/ARM</div>
+
+					<div class="pres">Mian Yousaf Kaukab</div>
+					<div>openSUSE hardware enablement</div>
+
+					<div class="pres">Thomas Gleixner</div>
+					<div>The anatomy of Linux Realtime</div>
+
+					<div class="pres">David Henningsson</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxN0VCYkZjNGV6Nnc/view?usp=sharing&resourcekey=0-NygJ-3CQc5nzF6El0eBLNg">Low latency audio through core isolation</a></div>
+
+					<div><span class="pres">Robert Fekete</span>, <span class="pres">Gunnar Andersson</span></div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxbzQ2TXVGMnExVGU3LVFfbGtxMUNVZmhNWGJN/view?usp=sharing&resourcekey=0-bUnY4Ssyl7f3yXoqzAfbFA">Linux and cars</a>, and GENIVI Alliance introduction by Gunnar</div>
+
+					<div class="pres">Krister Walfridsson</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxUmRYN2FNczZvRHBmbERtSHR4b3FndzlxMHpB/view?usp=sharing&resourcekey=0-h_9MnKwA_Skq018SdUFYQw">Getting more performance out of GCC</a></div>
+
+					<div>Lightning talks</div>
+					<div class="g2">
+						<div class="pres">Patrik Åberg</div>
+						<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLQm1sd0JJUTczNWM/view?usp=sharing&resourcekey=0-zLFSOCpIuQqySh9v4-xttg">The DMCE Project (Did My Code Execute)</a></div>
+							
+						<div class="pres">Rabin Vincent</div>
+						<div><a href="https://github.com/rabinv/kninja">Kninja - building kernels faster</a></div>
+					</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2016 - Beerlin edition</h2>
+						<h3>Day one - 2016-05-12</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Robert Fekete</div>
+					<div><a href="https://docs.google.com/presentation/d/1Za2JZv8lscH5iyimXUOKh4BLSNmDuCQstHHx_VJ_iRc/edit?usp=sharing">ChromeOS explained</a></div>
+					
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://docs.google.com/presentation/d/1-EMAsTW8OmP-QDgSlt8dpNVHCTyvcebpr8fteiTBcjA/edit?usp=sharing">IIO kernel</a></div>
+
+					<div class="pres">Daniel Baluta</div>
+					<div><a href="https://docs.google.com/presentation/d/1oK2oUSIU4kipjrsLMvdAFYLeZPEZ-1eTIBxdLOXq55Y/edit?usp=sharing">IIO Android HAL</a></div>
+					
+					<div class="pres">Mikael Persson</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLcE9fM0R4dUpIZWc/view?usp=sharing&resourcekey=0-VyjRjQ3VQbzjrwxwIZFNzw">Video for linux</a></div>
+
+					<div class="pres">Patrik Jakobsson</div>
+					<div>Facetime HD driver for linux</div>
+
+					<div class="pres">Daniel Baluta</div>
+					<div>Linux kernel programming undergraduate course</div>
+
+					<div class="pres">Fredrik Hugosson</div>
+					<div>ACoC</div>
+
+					<div class="pres">Constatin Musca</div>
+					<div><a href="https://docs.google.com/presentation/d/0BybszUG3ewMxTkctcWxfMEc0RFFBeG1yRjRrNVVObzdFOHVr/edit?usp=sharing&ouid=110698868656495230656&resourcekey=0-c0hQW9YqoOVK1UVph6Hc7Q&rtpof=true&sd=true">Brillo</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2016-05-13</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Octavian Purdila</div>
+					<div><a href="https://docs.google.com/presentation/d/1s6ih4Cs6GFU-tzPlDBPUjmTr_KJfV7GHzXN0Y_XHszw/edit?usp=sharing">Linux kernel as a library</a></div>
+
+					<div class="pres">David Henningsson</div>
+					<div>DKMS - Dynamic Kenrel Module Support</div>
+
+					<div class="pres">Fabrizio Demaria</div>
+					<div>Security of Multipath TCP</div>
+
+					<div class="pres">Andy Polyakov</div>
+					<div>OpenSSL</div>
+
+					<div class="pres">Johan Hovold</div>
+					<div>Greybus</div>
+
+					<div class="pres">Matias Bjørling</div>
+					<div>Open-channel solid state drives</div>
+							
+					<div class="pres">Daniel Baluta</div>
+					<div><a href="https://docs.google.com/presentation/d/14ve25ye7Ed_cppO-PRZ_z1LKLwTT6NIT1z-Cn9QriwQ/edit?usp=sharing">Outreachy</a></div>
+
+					<div class="pres">Krister Walfridsson</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxNnZEejh1RFJyeEtnUFhpb2hIQkRxazdSbVRn/view?usp=sharing&resourcekey=0-2pHwjP1CyapjcMH2BaVgzg">GCC</a></div>
+
+					<div class="pres">Joakim Nordell</div>
+					<div><a href="https://docs.google.com/presentation/d/1RI-wtZYoDt4dk9KXgM-VtmTvB2nCYX3e8ts1KiTIhAs/edit?usp=sharing">TCPDUMP</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2015 - Leprechaun edition</h2>
+						<h3>Day one - 2015-05-07</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Martina Maggio</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLWVdSdnhwaUlYd1lqYV92RmEzSHlhR0tYdmZZ/view?usp=sharing&resourcekey=0-pGipTAAOi5CdPTpCEvELtg">rt-bench: a tool for profiling schedulers implmentation for real-time applications</a></div>
+					
+					<div class="pres">Rabin Vincent</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxQ1h1R3d1QXVLV0tKWW04d0c1OW96SGM5QzlZ/view?usp=sharing&resourcekey=0-uy-XU-RPFt4yARZnfr9-Jw">ftrace</a></div>
+
+					<div class="pres">Robert Fekete</div>
+					<div>Linux kernel graphics, past present, and future + what did android drag in?</div>
+
+					<div class="pres">Kim Højgaard-Hansen</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxeXFyckNNRjZvZVpOMkE5c2RkSEtsNjBLLXRj/view?usp=sharing&resourcekey=0-430KeIBUdIAxJlnyzQRyhQ">Realising efficient industrial linux development</a></div>
+
+					<div class="pres">Hans Holmberg</div>
+					<div>Devicetree vs ACPI - A tale of two trees</div>
+
+					<div class="pres">Per Persson</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxVjBXem1VMEEzdzA/view?usp=sharing&resourcekey=0-Jjp90KoECZtrzxAtLysv-g">Calvin - a platform for IoT development</a> - available on <a href="https://github.com/EricssonResearch/calvin-base">GitHub</a></div>
+
+					<div><span class="pres">Hans Holmberg</span> &amp; <span class="pres">Anders Nilsson</span></div>
+					<div>Minnowboard MAX &amp; Edison dev boards</div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2015-05-08</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Octavian Purdila</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxUVRNSThYWjBncndabndaUmliTmptWHdrb2tZ/view?usp=sharing&resourcekey=0-7MzXWqtxECZa1ImChFwpng">Shaping the linux kernel MPTCP implementation thowards upstream acceptance</a></div>
+
+					<div class="pres">Joakim Bech</div>
+					<div><a href="https://docs.google.com/presentation/d/1pXCxGh0eCW0S-xgLOZoGhmRxPkd8xepzYXC_eAWoU44/edit?usp=sharing">Trustzone</a></div>
+					
+					<div class="pres">Mikael Lindberg</div>
+					<div>Better CPU governor joint project SONY/LU</div>
+
+					<div class="pres">Christoffer Jerkeby</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxZXg2anVHMmVwOEtFTTR2MjFOSzRwOWxWejc4/view?usp=sharing&resourcekey=0-dOvgaN09MKMSyrFWSZYkKw">The python-wifi API &amp; the wifirssi tool</a></div>
+
+					<div class="pres">David Henningsson</div>
+					<div>HDA-jack-retask</div>
+
+					<div class="pres">Julian Coccia</div>
+					<div><a href="https://drive.google.com/file/d/0B60z2Cn5EmKLTXpQWjF1YUFvSEYySDlMYTluRDZlR3RQV3NR/view?usp=sharing&resourcekey=0-h37jMflokdZ2WfS11MVrrA">FOSS handling</a></div>
+
+					<div class="pres">Javier González</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxQV9abXpoc201ZC12OU1SSDRkYldMRjBuMzhR/view?usp=sharing&resourcekey=0-aHn1scyUQW39MjoRlPDYtg">Linux kernel abstractions for open-channel solid state drives</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h2>2014 - kerneval edition</h2>
+						<p>The first ever LLC</p>
+						<h3>Day one - 2014-05-19</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Linus Walleij</div>
+					<div><a href="https://docs.google.com/presentation/d/1eKjYHV2tnAxzgLZH27jG2HnuiIndVvZcwyAXA8eL2EI/edit?usp=sharing">Kernel maintenance &amp; git</a></div>
+					
+					<div class="pres">Ulf Hansson</div>
+					<div>The MMC subsystem</div>
+
+					<div class="pres">Hans Holmberg</div>
+					<div>Tidying a patch mountain</div>
+
+					<div class="pres">Julian Coccia</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxbGdHQ0VUTG5PUHB6UTBVR2VtSlJnZnhPSDk0/view?usp=sharing&resourcekey=0-Yf_NjIYf_g_t9Uw2ZWhStw">Ericsson FOSS process</a></div>
+				</div>
+				<div class="g2">
+					<div class="g2txt">
+						<h3>Day two - 2014-05-20</h3>
+					</div>
+					<div><b>Presenter</b></div>
+					<div><b>Presentation</b></div>
+
+					<div class="pres">Jesper Nilsson</div>
+					<div><a href="https://drive.google.com/file/d/0BybszUG3ewMxZjdVNnY5XzZORUJJTnhLOHJhN3JpUkNWNUZ3/view?usp=sharing&resourcekey=0-5RTiILE9ysMlnXNJKD3P7Q">Doing it wrong</a></div>
+
+					<div class="pres">David Henningsson</div>
+					<div>Audio stack introduction</div>
+				</div>
 			</div>
 			<div id="t-shirt">
 				<table>
