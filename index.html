@@ -96,19 +96,23 @@
 			}
 			.sched_break {
 				background-color: #4D3E08 !important;
+				border: 4pt solid #000000;
 			}
 			.sched_talk {
 				background-color: #0F3D23 !important;
+				border: 4pt solid #000000;
 			}
 			.sched_other {
 				background-color: #13354D !important;
+				border: 4pt solid #000000;
 			}
-			.sched_this {
-				border-color: red;
-			}
-			.sched_next {
-				border-color: orange;
-			}
+			.current {
+				border-left: 5pt solid yellow;
+				border-right: 5pt solid yellow;
+				border-bottom: 2pt solid yellow;
+				border-top: 2pt solid yellow;
+				font-weight: bold;
+			},
 			.g2 {
 				display: grid;
 				text-align: left;
@@ -326,6 +330,63 @@
 				document.head.appendChild(script);
 			}
 
+			function highlight_current_talk() {
+				const now = new Date();
+				const cestString = now.toLocaleString("en-US", {timeZone: "Europe/Copenhagen"}); // Hi Pex ;)
+				const cestDate = new Date(cestString);
+
+				const today = cestDate.getFullYear() + '-' + 
+							  String(cestDate.getMonth() + 1).padStart(2, '0') + '-' + 
+							  String(cestDate.getDate()).padStart(2, '0');
+				const currentTimeMinutes = cestDate.getHours() * 60 + cestDate.getMinutes();
+
+				// 2. Scan the schedule
+				const rows = document.querySelectorAll('#panel-current table tr');
+				let currentDayInTable = "";
+
+				rows.forEach((row, index) => {
+					const cells = row.cells;
+
+					// Identify the date for this section of the table
+					if (cells.length === 1) {
+						const dayMatch = cells[0].innerText.match(/\d{4}-\d{2}-\d{2}/);
+						if (dayMatch) currentDayInTable = dayMatch[0];
+						return;
+					}
+
+					// Process rows that have Time, Presenter, Presentation
+					if (cells.length >= 3 && currentDayInTable === today) {
+						const timeStr = cells[0].innerText.trim();
+						const timeParts = timeStr.match(/(\d{1,2}):(\d{2})/);
+
+						if (timeParts) {
+							const talkStart = parseInt(timeParts[1]) * 60 + parseInt(timeParts[2]);
+
+							// Find when the NEXT talk starts to define the end of this slot
+							let talkEnd = 24 * 60; 
+							for (let i = index + 1; i < rows.length; i++) {
+								const nextCells = rows[i].cells;
+								if (nextCells.length >= 3) {
+									const nextTimeParts = nextCells[0].innerText.match(/(\d{1,2}):(\d{2})/);
+									if (nextTimeParts) {
+										talkEnd = parseInt(nextTimeParts[1]) * 60 + parseInt(nextTimeParts[2]);
+										break;
+									}
+								}
+								if (nextCells.length === 1 && nextCells[0].innerText.includes("Day")) break;
+							}
+
+							// Apply highlighting
+							if (currentTimeMinutes >= talkStart && currentTimeMinutes < talkEnd) {
+								row.classList.add('current');
+							} else {
+								row.classList.remove('current');
+							}
+						}
+					}
+				});
+			}
+
 			function sync_aria_states() {
 				const tabs = document.querySelectorAll('input[role="tab"]');
 				tabs.forEach(tab => {
@@ -373,6 +434,10 @@
 
 				__populate(organisations, document.querySelectorAll('*[class=org]'), 'a', false);
 				__populate(presenters, document.querySelectorAll('*[class=pres]'), 'a', true);
+
+				// Initial run and update every minute
+				highlight_current_talk();
+				setInterval(highlight_current_talk, 60000);
 			});
 		</script>
 		<div class="l_cont" aria-label="Lund Linux Con">
@@ -434,7 +499,7 @@
 
 						<h2>Here's the program</h2>
 						<h5>(All times in LLC time, which is close to and might resemble CEST but is not always the same)</h5>
-						<table>
+						<table style="border-collapse: collapse;">
 							<tr>
 								<td class="divide" colspan=3>
 									<h2>2026 -- Here we go again! Lets have a carnival of a time!</h2>
