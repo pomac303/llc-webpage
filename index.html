@@ -415,19 +415,19 @@
 
 			/* Since firefox, safari and edge seems to be missing cool new html5 semantics */
 			function __populate(source, elements, element_type, replace) {
-				var tag = document.createElement(element_type);
-				for (var index = 0; index < elements.length; index++) {
-					name = elements[index].innerText;
-					var data = source[name];
-					if (data == null)
-						continue;
-					if (data['title'])
-						name = data['title'];
-					tag.innerText = name;
-					tag.href = data['url'];
-					elements[index].innerText = '';
-					elements[index].appendChild(tag.cloneNode(true));
-				}
+				elements.forEach( tag => {
+					name = tag.innerText;
+					data = source[name];
+					if (data) {
+						title = data['title'];
+						if (title)
+							name = title;
+						new_tag = document.createElement(element_type);
+						new_tag.innerText = name;
+						new_tag.href = data['url'];
+						tag.replaceWith(new_tag);
+					}
+				});
 			}
 
 			function sync_aria_states() {
@@ -444,11 +444,11 @@
 					const radio = document.getElementById('tab-' + page);
 					if (radio)
 						radio.checked = true;
-				} else {
-					tab = document.querySelector('input[name="tab-group"]:checked').getAttribute('id');
-					page = tab.substring(4);
-					history.pushState({ page: page }, '', location.pathname + '?page=' + page);
 				}
+				tab = document.querySelector('input[name="tab-group"]:checked').getAttribute('id');
+				page = tab.substring(4);
+				history.pushState({ page: page }, '', location.pathname + '?page=' + page);
+
 				sync_aria_states();
 			});
 
@@ -473,6 +473,7 @@
 				__populate(presenters, document.querySelectorAll('*[class=pres]'), 'a', true);
 			});
 		</script>
+		<main>
 		<div class="l_cont">
 			<div class="l1">L</div>
 			<div class="l2">UND</div>
@@ -1391,6 +1392,7 @@
 			Also, checkout more information about Lund at <a href="https://www.touristinformationlund.se/">the volontary tourist information Destination Lund</a> or <a href="https://visitlund.se/en">Visit Lund</a>.
 			</p>
 		</div>
+		</main>
 	</body>
 </html>
 
