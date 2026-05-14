@@ -466,7 +466,8 @@
 				});
 
 				document.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]').forEach( link => {
-					link.setAttribute('aria-label', 'Watch video: ' + link.parentNode.lastChild.innerText);
+					text = link.nextSibling.innerText;
+					link.setAttribute('aria-label', 'Watch video: ' + (text ? text : link.nextSibling.data));
 				});
 
 				__populate(organisations, document.querySelectorAll('*[class=org]'), 'a', false);
