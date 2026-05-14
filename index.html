@@ -53,13 +53,13 @@
 			a:hover {
 				text-decoration: underline;
 			}
-			.center, p.crew, div.main {
+			.center, p.crew, .main {
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
 				align-items: center;
 			}
-			div.main {
+			.main {
 				/* Same width as the image */
 				width: 844px;
 			}
@@ -474,7 +474,6 @@
 				__populate(presenters, document.querySelectorAll('*[class=pres]'), 'a', true);
 			});
 		</script>
-		<main>
 		<div class="l_cont">
 			<div class="l1">L</div>
 			<div class="l2">UND</div>
@@ -487,7 +486,7 @@
 			<div class="l9">2026</div>
 		</div>
 
-		<div class="main" style="width: 850px; min-height=50em;" role="tablist">
+		<main class="main" style="width: 850px; min-height=50em;" aria-label="Lund LinuxCon Main Content">
 			<input type="radio" id="tab-current" name="tab-group" role="tab" class="visually-hidden" aria-selected="true" checked>
 			<input type="radio" id="tab-about" name="tab-group" role="tab" class="visually-hidden">
 			<input type="radio" id="tab-crew" name="tab-group" role="tab" class="visually-hidden">
@@ -1382,17 +1381,16 @@
 					<div class="sl5">C</div>
 					<div class="sl6">ON</div>
 				</div>
-				on <a href="https://www.youtube.com/@lundlinuxconference"></a>
-				and <a href="https://www.facebook.com/lundlinuxcon/"><img src="images/flogo_RGB_HEX-72.svg" alt="Facebook page" height="32" width="32"></a>
+				on <a aria-label="Our YouTube channel" href="https://www.youtube.com/@lundlinuxconference"></a>
+				and <a aria-label="Our Facebook page" href="https://www.facebook.com/lundlinuxcon/"><img src="images/flogo_RGB_HEX-72.svg" alt="Facebook page" height="32" width="32"></a>
 			</p>
 
 			<p class="center">
-				Contact us at <a href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a> or on <a href="ircs://irc.libera.chat/lundlc">#lundlc</a> at <a href="https://libera.chat/">libera.chat</a>
+				Contact us at <a aria-label="Send us a email" href="mailto:lund-linuxcon-crew-AT-googlegroups.com">lund-linuxcon-crew-AT-googlegroups.com</a> or on <a href="ircs://irc.libera.chat/lundlc">#lundlc</a> at <a href="https://libera.chat/">libera.chat</a>
 			</p>
 			<p class="center">
 			Also, checkout more information about Lund at <a href="https://www.touristinformationlund.se/">the volontary tourist information Destination Lund</a> or <a href="https://visitlund.se/en">Visit Lund</a>.
 			</p>
-		</div>
 		</main>
 	</body>
 </html>
