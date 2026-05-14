@@ -465,6 +465,10 @@
 					});
 				});
 
+				document.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]').forEach( link => {
+					link.setAttribute('aria-label', 'Watch video: ' + link.parentNode.lastChild.innerText);
+				});
+
 				__populate(organisations, document.querySelectorAll('*[class=org]'), 'a', false);
 				__populate(presenters, document.querySelectorAll('*[class=pres]'), 'a', true);
 			});
@@ -481,7 +485,7 @@
 			<div class="l9">2026</div>
 		</div>
 
-		<div class="main" style="width: 850px; min-height=50em;">
+		<div class="main" style="width: 850px; min-height=50em;" role="tablist">
 			<input type="radio" id="tab-current" name="tab-group" role="tab" class="visually-hidden" aria-selected="true" checked>
 			<input type="radio" id="tab-about" name="tab-group" role="tab" class="visually-hidden">
 			<input type="radio" id="tab-crew" name="tab-group" role="tab" class="visually-hidden">
