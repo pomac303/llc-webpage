@@ -366,7 +366,7 @@
 							let talkEnd = 24 * 60; 
 							for (let i = index + 1; i < rows.length; i++) {
 								const nextCells = rows[i].cells;
-								if (nextCells.length >= 3) {
+								if (nextCells.length >= 2) {
 									const nextTimeParts = nextCells[0].innerText.match(/(\d{1,2}):(\d{2})/);
 									if (nextTimeParts) {
 										talkEnd = parseInt(nextTimeParts[1]) * 60 + parseInt(nextTimeParts[2]);
@@ -471,18 +471,17 @@
 				</div>
 				<div class="tab-panels">
 					<section class="tab-panel" id="panel-current" role="tabpanel" aria-labelledby="label-tab-current">
-						<!--
 						<h1>LLC 2025 has come and gone, it was great to see you all again and there is always next year!</h1>
+						<h6>(time to think about your next talk, so it's ready by then!)</h6>
+						<a href="images/llc-2026-large.jpg"><img fetchpriority=high class="img.center" style="width: 100%; height: 100%;" width="940" height="242" src="images/llc-2026-small.avif" alt="Picture of everyone from 2026"></a>
 						<p style="text-align: center;" >LLC is a "half open" conference. This means that while we're formally invitation-only, it's very easy to get an invitation!</p>
 						<p style="text-align: center;">All we ask for is that you have some interest in the Linux kernel from a technical perspective.</p>
 						<p style="text-align: center;">If you would like to join the conference next year, please use <a href="https://forms.gle/DPjEvJPcD6oGA7X67">this contact form</a> with a short summary of who you are, and your relationship (if any) with the Linux kernel. Assuming everything is fine you'll get an invitation link before the next conference, please register a few months before the set date.</p>
-						-->
-						<h1>LLC 2026 is just around the corner!</h1>
 
-						<a href="images/llc-2025-large.jpg"><img fetchpriority=high class="img.center" style="width: 100%; height: 100%;" width="940" height="242" src="images/llc-2025-small.avif" alt="Picture of everyone from 2024"></a>
+						<!--
 						<p style="text-align: center;">We're looking forward to seeing you all, soo very soon! Have a read of the program while you wait.</p>
 						<p style="text-align: center;">Check the lightning talk slots, have something you want to bring up? discuss? air?</p>
-						<!-- <table>
+						<table>
 							<tr>
 								<td class="divide">
 									<h2>LLC 2023 is coming up quickly! Hoping to see you.... here! :)</h2>
@@ -492,8 +491,7 @@
 									<p>(sorry, using webp since it's ~300KB while gif was 1.2MB)</p>
 								</td>
 							</tr>
-						</table> -->
-
+						</table>
 						<h2>Important!</h2>
 						<h4>Due to site security, only pre-regsitered attendees may enter - photo ID is required!</h4>
 
@@ -630,6 +628,7 @@
 								<td colspan="2">Finishing up, social activity: <b>self-organized</b></td>
 							</tr>
 						</table>
+-->
 					</section>
 					<section class="tab-panel" id="panel-crew" role="tabpanel" aria-labelledby="label-tab-crew">
 						<h3 class="crew"><span class="pres">Frey Alfredsson</span> - <span class="org">kau</span></h3>
@@ -663,6 +662,50 @@
 
 					</section>
 					<section class="tab-panel" id="panel-past" role="tabpanel" aria-labelledby="label-tab-past">
+						<div class="g2">
+							<div class="g2txt">
+								<h2>2026 -- Here we go again! Lets have a carnival of a time!</h2>
+								<h3>Day one - 2026-05-21</h3>
+							</div>
+							<div><b>Presenter</b></div>
+							<div><b>Presentation</b></div>
+							<div><span class="pres">Toke Høiland-Jørgensen</span></div>
+							<div>TCP in (way too much) detail</div>
+							<div><span class="pres">Krister Walfridsson</span></div>
+							<div><a href="https://drive.google.com/file/d/1GdowCRA_-oGfZZgu4VvQk6HQChKj8WF4/view?usp=drive_link">Detecting GCC miscompilations</a></div>
+							<div><span class="pres">Pankaj Raghav</span></div>
+							<div><a href="https://drive.google.com/file/d/1EtHwbWh2_vZUHUXCdGIRjxhe-W41qgRA/view?usp=drive_link">Block Atomic writes in Linux</a></div>
+							<div><span class="pres">Vitaly Wool</span></div>
+							<div>ngZRAM in Rust: steady as it goes</div>
+							<div><span class="pres">Johannes Thumshirn</span></div>
+							<div>Here be drgns - Kernel debugging with drgn</div>
+							<div><span class="pres">Hans Holmberg</span></div>
+							<div>File system benchmarking (discussion)</div>
+						</div>
+						<div class="g2">
+							<div class="g2txt">
+								<h3>Day one - 2026-05-22</h3>
+							</div>
+							<div><b>Presenter</b></div>
+							<div><b>Presentation</b></div>
+							<div><span class="pres">Michael Cardell Widerkrantz</span></div>
+							<div>Creating secrets with measured &amp; verified boot</div>
+							<div><span class="pres">Andy Shevchenko</span></div>
+							<div>Typical mistakes when submitting a new code to Linux kernel: Ten years later.</div>
+							<div><span class="press">Hannes Reinecke</span></div>
+							<div>Sheepdog as a distributed NVMe storage</div>
+							<div><span class="pres">Daniel Wagner</span></div>
+							<div><a hred="https://drive.google.com/file/d/1__ZfjshYG_-jwuaKKPaNpGrRvTDTVmuD/view?usp=drive_link">nvme-cli 3.x and nvme-fabrics at scale</a></div>
+							<div><span class="pres">Gerhard de Clercq</span></div>
+							<div><a href="https://drive.google.com/file/d/1Ejrhjly4cLdEWRssZOHHJlcnh02IwDZS/view?usp=drive_link">Litterbox: Somewhat Isolated Development Environments</a></div>
+							<div>Lightning talks:</div>
+							<div class="g2">
+								<div><span class="pres">Andy Polyakov</span></div>
+								<div>Can SSH do that?</div>
+								<div><span class="pres">Toke Høiland-Jørgensen</span></div>
+								<div>The brave new world of AI and security and it's implications</div>
+							</div>
+						</div>
 						<div class="g2">
 							<div class="g2txt">
 								<h2>2025 -- Whoa! there it is!</h2>
